@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Command Bar</Name>
+		<Description>Provides various Windows Live Messenger and Messenger Plus! Live functions in a floating deskbar.</Description>
+		<Version>1.2</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_CMDB</UpdateId>
+		<BuildNumber>120</BuildNumber>
+	</Information>
+</ScriptInfo>

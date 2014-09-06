@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Interface Writer</Name>
+		<Description>Manage Messenger Plus! interface files with ease!  Add, edit and remove interface components, test them out, format the XML file and more...</Description>
+		<Version>3.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_ITFW</UpdateId>
+		<BuildNumber>300</BuildNumber>
+	</Information>
+</ScriptInfo>

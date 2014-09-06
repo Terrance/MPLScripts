@@ -1,0 +1,242 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndSetup" Version="1">
+
+	<Attributes>
+		<Caption>Idle Manager</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Setup Idle Manager...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="234" Height="175"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnSave">
+					<Position Top="0" Width="50" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>icon-floppy</Name></Image>
+					<Caption>&amp;Save</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="50" Left="0"/>
+					<Image><Name>icon-delete</Name></Image>
+					<Caption>&amp;Cancel</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtReminder">
+			<Transparency>100</Transparency>
+			<Position Top="0" Width="227" Left="3" Height="30"/>
+			<Caption>Remember: timers will not even start until you become Idle.  So if Messenger doesn't set you idle for 3 minutes, and you have set an option for 5 minutes, it will not happen for a total of 8 minutes!</Caption>
+		</Control>
+		<Control xsi:type="CheckboxControl" Id="ChkStatus">
+			<Position Top="32" Width="9" Left="3"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatus1">
+			<Position Top="32" Width="69" Left="14"/>
+			<Caption>Change my status to</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbStatus">
+			<Position Top="31" Width="63" Left="86"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatus2">
+			<Position Top="32" Width="17" Left="152"/>
+			<Caption>after</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtStatusMin">
+			<Position Top="31" Width="20" Left="171"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatus3">
+			<Position Top="32" Width="28" Left="194"/>
+			<Caption>minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckboxControl" Id="ChkName">
+			<Position Top="46" Width="9" Left="3"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtName1">
+			<Position Top="46" Width="69" Left="14"/>
+			<Caption>Change my name to</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtNameTxt">
+			<Position Top="45" Width="63" Left="86"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtName2">
+			<Position Top="46" Width="17" Left="152"/>
+			<Caption>after</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtNameMin">
+			<Position Top="45" Width="20" Left="171"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtName3">
+			<Position Top="46" Width="28" Left="194"/>
+			<Caption>minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckboxControl" Id="ChkPSM">
+			<Position Top="60" Width="9" Left="3"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPSM1">
+			<Position Top="60" Width="68" Left="14"/>
+			<Caption>Change my PSM to</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtPSMTxt">
+			<Position Top="59" Width="63" Left="86"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPSM2">
+			<Position Top="60" Width="17" Left="152"/>
+			<Caption>after</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtPSMMin">
+			<Position Top="59" Width="20" Left="171"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPSM3">
+			<Position Top="60" Width="28" Left="194"/>
+			<Caption>minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckboxControl" Id="ChkSignout">
+			<Position Top="74" Width="9" Left="3"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSignout1">
+			<Position Top="74" Width="135" Left="14"/>
+			<Caption>Auto-sign-out of Windows Live Messenger</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSignout2">
+			<Position Top="74" Width="17" Left="152"/>
+			<Caption>after</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtSignoutMin">
+			<Position Top="73" Width="20" Left="171"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSignout3">
+			<Position Top="74" Width="28" Left="194"/>
+			<Caption>minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckboxControl" Id="ChkLaunch">
+			<Position Top="88" Width="9" Left="3"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtLaunch1">
+			<Position Top="88" Width="69" Left="14"/>
+			<Caption>Launch a specific file</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtLaunchTxt">
+			<Position Top="87" Width="63" Left="86"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtLaunch2">
+			<Position Top="88" Width="17" Left="152"/>
+			<Caption>after</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtLaunchMin">
+			<Position Top="87" Width="20" Left="171"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtLaunch3">
+			<Position Top="88" Width="28" Left="194"/>
+			<Caption>minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckboxControl" Id="ChkShutdown">
+			<Position Top="102" Width="9" Left="3"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtShutdown1">
+			<Position Top="102" Width="69" Left="14"/>
+			<Caption>Use shutdown.exe to</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbShutdown">
+			<Position Top="101" Width="63" Left="86"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtShutdown2">
+			<Position Top="102" Width="17" Left="152"/>
+			<Caption>after</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtShutdownMin">
+			<Position Top="101" Width="20" Left="171"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtShutdown3">
+			<Position Top="102" Width="28" Left="194"/>
+			<Caption>minutes</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndIdle" Version="1">
+
+	<Attributes>
+		<Caption>Idle Manager</Caption>
+		<TopMost>true</TopMost>
+		<ShowInTaskbar>false</ShowInTaskbar>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Idle Manager</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="122" Height="55"/>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtCount">
+			<Transparency>100</Transparency>
+			<Position Top="-2" Width="110" Left="2"/>
+			<Caption>Idle status count: 0 minute(s)</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnIdle">
+			<Position Top="10" Width="110" Left="1"/>
+			<Attributes><IsDefault>true</IsDefault></Attributes>
+			<Image Margin="4"><Name>sounds-check</Name></Image>
+			<Caption>Disable the Idle status!</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Idle Manager...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="45" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Idle Manager (Version 1.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

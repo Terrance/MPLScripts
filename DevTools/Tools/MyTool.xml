@@ -1,0 +1,94 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndMyTool" Version="1">
+
+	<Position Width="388" Height="300">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<ChildTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtWelcome">
+			<Position Left="6" Top="3" Width="376" Height="40">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>This is My Tool, an example of how to use DevTools.  The main window size is automatically set based on the child window's size.  You can access window events just like a normal window, through the OnWindowIdEvent... functions.</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtTest">
+			<Position Left="6" Top="47" Width="376" Height="218">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<WantReturn>true</WantReturn>
+			</Attributes>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnAlert">
+			<Position Left="6" Top="270" Width="186">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>..\Tools\MyTool\Alert</Name>
+			</Image>
+			<Caption>Alert me with what I wrote!</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnReset">
+			<Position Left="196" Top="270" Width="186">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>..\Tools\MyTool\Reset</Name>
+			</Image>
+			<Caption>Clear the text box contents!</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndMyTool_About" Version="1">
+
+	<Attributes>
+		<Caption>About My Tool...</Caption>
+		<TopMost>true</TopMost>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About My Tool...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="106">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtPara1">
+			<Position Left="3" Top="-3" Width="250" Height="40">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>My Tool is an example of how to write a tool for the DevTools script.  You can make a copy of it and use it as a template for building your own custom tools.</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPara2">
+			<Position Left="3" Top="42" Width="250" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Script developed by Whiz @ WhizWeb Community.</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkWebsite">
+			<Position Left="101" Top="42" Width="142" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Whiz @ WhizWeb Community</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

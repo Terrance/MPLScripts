@@ -1,0 +1,136 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndCommandBar_Shell" Version="1">
+
+	<Attributes>
+		<Caption>Command Bar</Caption>
+		<TopMost>true</TopMost>
+		<ShowInTaskbar>false</ShowInTaskbar>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+	</TitleBar>
+	
+	<Position Width="184" Height="28">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>150</MinWidth>
+			<MinHeight>28</MinHeight>
+		</Resizeable>
+	</Position>
+	
+	<WindowTmpl>
+		<Borders Type="Simple"/>
+	</WindowTmpl>
+	
+	<Elements>
+		<Element xsi:type="PlaceHolderElement" Id="PlhChild">
+			<Position Left="12" Top="2" Width="145" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed" />
+			</Position>
+		</Element>
+	</Elements>
+	
+	<Controls>
+		<Control xsi:type="ButtonControl" Id="BtnOk">
+			<Position Left="156" Top="0" Width="24" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<Image><Name>tick-green</Name></Image>
+			<Help>Click here to process the current action.</Help>
+			<StandardLook Template="Clear"/>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndCommandBar_CMain" Version="1">
+
+	<Position Width="145" Height="24">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+	
+	<ChildTmpl/>
+	
+	<Controls>
+		<Control xsi:type="ButtonControl" Id="BtnCommands">
+			<Position Left="0" Top="0" Width="24" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="TopBottomFixed"/>
+			</Position>
+			<Image><Name>menu-commands</Name></Image>
+			<Help>Some useful preset commands.</Help>
+			<StandardLook Template="Clear"/>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnContacts">
+			<Position Left="25" Top="0" Width="24" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="TopBottomFixed"/>
+			</Position>
+			<Image><Name>buddy-multi</Name></Image>
+			<Help>Your Messenger contacts.</Help>
+			<StandardLook Template="Clear"/>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtCmd">
+			<Position Left="50" Top="0" Width="95" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Help>Type a command here...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndCommandBar_CList" Version="1">
+
+	<Position Width="145" Height="24">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+	
+	<ChildTmpl/>
+	
+	<Controls>
+		<Control xsi:type="EditControl" Id="EdtBG" Enabled="false">
+			<Position Left="0" Top="0" Width="145" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbList">
+			<Position Left="0" Top="0" Width="145">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Images>
+				<Image Id="Block"><Name>buddy-blocked</Name></Image>
+				<Image Id="Information"><Name>icon-info</Name></Image>
+				<Image Id="Message"><Name>contactcleanup-message</Name></Image>
+				<Image Id="Name"><Name>buddy-namechange</Name></Image>
+				<Image Id="PSM"><Name>buddy-psmchange</Name></Image>
+				<Image Id="Status"><Name>buddy-away</Name></Image>
+				<Image Id="Lock"><Name>plusicon-17</Name></Image>
+				<Image Id="Sign-out"><Name>sounds-rec-little</Name></Image>
+				<Image Id="Shortcut"><Name>panel-quicktexts</Name></Image>
+				<Image Id="Help"><Name>icon-help</Name></Image>
+				<Image Id="Online"><Name>buddy-online</Name></Image>
+				<Image Id="OnBlocked"><Name>buddy-blocked</Name></Image>
+				<Image Id="Busy"><Name>buddy-busy</Name></Image>
+				<Image Id="Away"><Name>buddy-away</Name></Image>
+				<Image Id="Offline"><Name>buddy-offline</Name></Image>
+				<Image Id="OffBlocked"><Name>buddy-blocked-offline</Name></Image>
+			</Images>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

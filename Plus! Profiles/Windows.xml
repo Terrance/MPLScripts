@@ -1,0 +1,311 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndManager" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Profiles</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Profiles</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="435" Height="255">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>435</MinWidth>
+			<MinHeight>255</MinHeight>
+		</Resizeable>
+	</Position>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<LeftControls>
+				<Control xsi:type="ButtonControl" Id="BtnAdd">
+					<Position Top="0" Width="20" Left="3"/>
+					<Image><Name>icon-add</Name></Image>
+					<Help>Add a new profile...</Help>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnEdit">
+					<Position Top="0" Width="20" Left="26"/>
+					<Image><Name>icon-edit</Name></Image>
+					<Help>Edit this profile...</Help>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnDelete">
+					<Position Top="0" Width="20" Left="49"/>
+					<Image><Name>icon-delete</Name></Image>
+					<Help>Delete this profile...</Help>
+				</Control>
+			</LeftControls>
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="20" Left="0"/>
+					<Image><Name>sounds-check</Name></Image>
+					<Help>Finish editing profiles...</Help>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="ListViewControl" Id="LstProfiles">
+			<Position Top="0" Width="274" Left="3" Height="96"><Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/></Position>
+			<Help>These are the profiles saved to your user account.</Help>
+			<ReportView>
+				<SortColHeader>true</SortColHeader>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>ID</ColumnId>
+					<Label>ID</Label>
+					<Width>7</Width>
+				</Column>
+				<Column>
+					<ColumnId>Description</ColumnId>
+					<Label>Description</Label>
+					<Width>18</Width>
+				</Column>
+				<Column>
+					<ColumnId>Name</ColumnId>
+					<Label>Name</Label>	
+					<Width>11</Width>
+				</Column>
+				<Column>
+					<ColumnId>PSM</ColumnId>
+					<Label>PSM</Label>	
+					<Width>10</Width>
+				</Column>
+				<Column>
+					<ColumnId>DP</ColumnId>
+					<Label>DP</Label>	
+					<Width>8</Width>
+				</Column>
+				<Column>
+					<ColumnId>Status</ColumnId>
+					<Label>Status</Label>	
+					<Width>12</Width>
+				</Column>
+				<Column>
+					<ColumnId>AutoMessage</ColumnId>
+					<Label>AutoMessage</Label>	
+					<Width>21</Width>
+				</Column>
+				<Column>
+					<ColumnId>Colour</ColumnId>
+					<Label>Colour</Label>	
+					<Width>12</Width>
+				</Column>
+			</Columns>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndAddEditProfile" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Profiles</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Profiles</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="230" Height="198"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnSave">
+					<Position Top="0" Width="20" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>icon-floppy</Name></Image>
+					<Help>Save this profile...</Help>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="20" Left="0"/>
+					<Image><Name>icon-close</Name></Image>
+					<Help>Cancel profile changes...</Help>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtDescription">
+			<Position Top="2" Width="49" Left="2"/>
+			<Caption>Description: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtDescription">
+			<Position Top="0" Width="158" Left="60"/>
+			<Help>Enter a unique profile description.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtName1">
+			<Position Top="18" Width="49" Left="2"/>
+			<Caption>Name change: </Caption>
+		</Control>
+		<Control xsi:type="RadioControl" Id="RdoName1">
+			<Position Top="18" Left="59" Width="10"/>
+			<Attributes><IsNewGroup>true</IsNewGroup></Attributes>
+		</Control>
+		<Control xsi:type="RadioControl" Id="RdoName2">
+			<Position Top="32" Left="59" Width="10"/>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtName1">
+			<Position Top="16" Width="148" Left="70"/>
+			<Help>Enter a new Messenger name to display.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtName2a">
+			<Position Top="30" Width="58" Left="70"/>
+			<Help>Enter a new Messenger name to display.\nThis would appear before your current name.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtName2">
+			<Position Top="32" Width="29" Left="129"/>
+			<Caption>&#8249;current&#8250;</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtName2b">
+			<Position Top="30" Width="58" Left="160"/>
+			<Help>Enter a new Messenger name to display.\nThis would appear after your current name.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPSM1">
+			<Position Top="48" Width="49" Left="2"/>
+			<Caption>PSM change: </Caption>
+		</Control>
+		<Control xsi:type="RadioControl" Id="RdoPSM1">
+			<Position Top="48" Left="59" Width="10"/>
+			<Attributes><IsNewGroup>true</IsNewGroup></Attributes>
+		</Control>
+		<Control xsi:type="RadioControl" Id="RdoPSM2">
+			<Position Top="62" Left="59" Width="10"/>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtPSM1">
+			<Position Top="46" Width="148" Left="70"/>
+			<Help>Enter a new Messenger PSM to display.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtPSM2a">
+			<Position Top="60" Width="58" Left="70"/>
+			<Help>Enter a new Messenger PSM to display.\nThis would appear before your current PSM.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPSM2">
+			<Position Top="62" Width="29" Left="129"/>
+			<Caption>&#8249;current&#8250;</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtPSM2b">
+			<Position Top="60" Width="58" Left="160"/>
+			<Help>Enter a new Messenger PSM to display.\nThis would appear after your current PSM.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtDP">
+			<Position Top="78" Width="49" Left="2"/>
+			<Caption>DP change: </Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkDP">
+			<Position Top="78" Left="60" Width="35"/>
+			<Caption>Internal</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtDP">
+			<Position Top="76" Width="120" Left="98"/>
+			<Help>Enter the path to an image file (in BMP, GIF, PNG or JPG format).\nThis must be relative to the script image directory if "Internal" is checked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatus">
+			<Position Top="94" Width="49" Left="2"/>
+			<Caption>Status change: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbStatus">
+			<Position Top="92" Width="158" Left="60"/>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAutoMessage">
+			<Position Top="110" Width="49" Left="2"/>
+			<Caption>AutoMessage: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtAutoMessage">
+			<Position Top="108" Width="158" Left="60"/>
+			<Help>Enter a message to be sent to contacts if they send a message to you.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtColour">
+			<Position Top="126" Width="49" Left="2"/>
+			<Caption>Font colour: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtColour">
+			<Position Top="124" Width="158" Left="60"/>
+			<Help>Enter a colour, either with a name (red), number (4), or HEX code (#FF0000).</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndFloater" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Profiles</Caption>
+		<TopMost>true</TopMost>
+		<ShowInTaskbar>false</ShowInTaskbar>
+		<Transparency>100</Transparency>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Profiles</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="132" Height="42"/>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="ComboBoxControl" Id="CmbProfiles">
+			<Position Top="-1" Width="120" Left="1"/>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Plus! Profiles...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="45" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Plus! Profiles (Version 1.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

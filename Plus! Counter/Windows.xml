@@ -1,0 +1,169 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndCounter" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Counter</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Counter</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="157" Height="48"/>
+
+	<DialogTmpl/>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="GLoad">
+			<Position Top="0" Left="2"/>
+			<Image><Name>icon-update</Name></Image>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TimeElapsed"> 
+			<Position Left="30" Top="-2" Width="121"/>
+			<Caption>Time elapsed: 00:00:00:0 (0ds)</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Pause">
+			<Position Left="30" Top="8" Width="21"/>
+			<Caption>Pause</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Resume">
+			<Position Left="53" Top="8" Width="27"/>
+			<Caption>Resume</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Stop">
+			<Position Left="82" Top="8" Width="16"/>
+			<Caption>Stop</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Adjust">
+			<Position Left="100" Top="8" Width="46"/>
+			<Caption>Adjust (BETA)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAdjust" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Counter</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Counter</Text>
+		</Title>
+		<AllowMinimize>false</AllowMinimize>
+	</TitleBar>
+
+	<Position Width="123" Height="88"/>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="Warning">
+			<Transparency>100</Transparency>
+			<Position Left="2" Top="-2" Width="114" Height="20"/>
+			<Caption>WARNING: using this feature will totally ruin the total time counter!</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="HoursElapsed">
+			<Position Left="2" Top="18" Width="59"/>
+			<Caption>Hours elapsed:</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="Hours">
+			<Position Left="60" Top="18" Width="9"/>
+			<Caption>00</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="HoursAdd">
+			<Position Left="71" Top="18" Width="8"/>
+			<Caption>add</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="HoursSubtract">
+			<Position Left="85" Top="18" Width="28"/>
+			<Caption>subtract</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="MinutesElapsed">
+			<Position Left="2" Top="27" Width="57"/>
+			<Caption>Minutes elapsed:</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="Minutes">
+			<Position Left="60" Top="27" Width="9"/>
+			<Caption>00</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="MinutesAdd">
+			<Position Left="71" Top="27" Width="8"/>
+			<Caption>add</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="MinutesSubtract">
+			<Position Left="85" Top="27" Width="28"/>
+			<Caption>subtract</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="SecondsElapsed">
+			<Position Left="2" Top="36" Width="57"/>
+			<Caption>Seconds elapsed:</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="Seconds">
+			<Position Left="60" Top="36" Width="9"/>
+			<Caption>00</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="SecondsAdd">
+			<Position Left="71" Top="36" Width="8"/>
+			<Caption>add</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="SecondsSubtract">
+			<Position Left="85" Top="36" Width="28"/>
+			<Caption>subtract</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="NewTime">
+			<Transparency>150</Transparency>
+			<Position Left="2" Top="48" Width="114"/>
+			<Caption>New time: 00:00:00.0 (0ds)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Plus! Counter...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="Info">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Plus! Counter (Version 1.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Plus! Browser</Name>
+		<Description>Internet Explorer for your Messenger!</Description>
+		<Version>2.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_BRWS</UpdateId>
+		<BuildNumber>200</BuildNumber>
+	</Information>
+</ScriptInfo>

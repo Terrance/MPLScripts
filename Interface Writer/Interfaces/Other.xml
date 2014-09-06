@@ -1,0 +1,92 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndSubclass" Version="1">
+
+	<Attributes>
+		<ShowInTaskbar>false</ShowInTaskbar>
+	</Attributes>
+
+	<Position Width="0" Height="0"/>
+
+	<DialogTmpl/>
+
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | About...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | About...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="452" Height="240">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtAuthor">
+			<Position Left="3" Top="135" Width="207">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Designed by Whiz @ WhizWeb Community:</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkWebsite">
+			<Position Left="212" Top="135" Width="116">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>http://www.ww-c.co.nr</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtReport">
+			<Position Left="3" Top="155" Width="118">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Found a bug?  Report it:</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkForum">
+			<Position Left="123" Top="155" Width="259">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>http://www.msghelp.net/showthread.php?tid=90773</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtThanks">
+			<Position Left="3" Top="175" Width="426">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Special thanks to: CookieRevised, matty, Matti, mynetx, SmokingCookie and Spunky.</Caption>
+		</Control>
+	</Controls>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgLogo">
+			<Position Left="3" Top="-1">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>image-logo-large</Name>
+			</Image>
+		</Element>
+		<Element xsi:type="ImageElement" Id="ImgText">
+			<Position Left="143" Top="-1">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>image-text</Name>
+			</Image>
+		</Element>
+	</Elements>
+
+</Window>
+
+</Interfaces>

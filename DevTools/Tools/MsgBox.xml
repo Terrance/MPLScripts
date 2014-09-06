@@ -1,0 +1,158 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndMsgBox" Version="1">
+
+	<Position Width="300" Height="230">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<ChildTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtTitle">
+			<Position Left="5" Top="8" Width="47">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Title:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTitle">
+			<Position Left="56" Top="5" Width="239">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtMessage">
+			<Position Left="5" Top="33" Width="47">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Message:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtMessage">
+			<Position Left="56" Top="30" Width="239" Height="44">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Multiline>true</Multiline>
+				<WantReturn>true</WantReturn>
+			</Attributes>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtIcon">
+			<Position Left="5" Top="81" Width="47">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Icon:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbIcon">
+			<Position Left="56" Top="78" Width="239">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtButtons">
+			<Position Left="5" Top="106" Width="47">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Buttons:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbButtons">
+			<Position Left="56" Top="103" Width="239">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtHandle">
+			<Position Left="5" Top="131" Width="55">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Handle:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbHandle">
+			<Position Left="56" Top="128" Width="105">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHandle" Enabled="False">
+			<Position Left="165" Top="128" Width="130">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnAlert">
+			<Position Left="5" Top="153" Width="143">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear" />
+			<Image>
+				<Name>..\Tools\MsgBox\Alert</Name>
+			</Image>
+			<Caption>Preview the alert...</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode">
+			<Position Left="152" Top="153" Width="143">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear" />
+			<Image>
+				<Name>..\Tools\MsgBox\Code</Name>
+			</Image>
+			<Caption>Generate the code...</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtCode">
+			<Position Left="5" Top="181" Width="290" Height="44">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+				<WantReturn>true</WantReturn>
+			</Attributes>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndMsgBox_About" Version="1">
+
+	<Attributes>
+		<Caption>About My Tool...</Caption>
+		<TopMost>true</TopMost>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About Message Box...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="260" Height="106">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtPara1">
+			<Position Left="3" Top="-3" Width="240" Height="40">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Message Box is a simple tool for generating dialog windows using the Interop.Call() function.  It can set the icon, buttons and handle of a new dialog.</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPara2">
+			<Position Left="3" Top="42" Width="240" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Script and tool by Whiz @ WhizWeb Community.</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkWebsite">
+			<Position Left="90" Top="42" Width="142" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Whiz @ WhizWeb Community</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

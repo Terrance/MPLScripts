@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Plus! Poll</Name>
+		<Description>Create and participate in simple polls with other contacts.  Supports true or false, yes or no, numbers-only, prompt and multiple choice questions.</Description>
+		<Version>1.1</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_PSPL</UpdateId>
+		<BuildNumber>110</BuildNumber>
+	</Information>
+</ScriptInfo>

@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>MegaBlink</Name>
+		<Description>Blink your name, PSM, DP or status, or any combination!  Change the blink-to values (defaults are blank) and the blink delay (default is 6 seconds).</Description>
+		<Version>1.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_MGBL</UpdateId>
+		<BuildNumber>100</BuildNumber>
+	</Information>
+</ScriptInfo>

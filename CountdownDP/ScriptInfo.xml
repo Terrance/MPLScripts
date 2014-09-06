@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>CountdownDP</Name>
+		<Description>A countdown that ticks away as your display picture!  You can also customize all of the display pictures...</Description>
+		<Version>1.1</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_CDDP</UpdateId>
+		<BuildNumber>110</BuildNumber>
+	</Information>
+</ScriptInfo>

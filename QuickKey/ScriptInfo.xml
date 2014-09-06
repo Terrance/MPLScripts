@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>QuickKey</Name>
+		<Description>The ultimate Messenger multi-shortcut multi-menu!  Assign simple Messenger tasks to a combination of keys - Ctrl, Alt, Shift and Win, plus a letter or number.</Description>
+		<Version>2.2</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_QCKY</UpdateId>
+		<BuildNumber>220</BuildNumber>
+	</Information>
+</ScriptInfo>

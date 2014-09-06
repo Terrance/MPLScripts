@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Plus! Counter</Name>
+		<Description>A simple timer for Messenger.  It also allows you to edit the time, but this feature can cause errors...</Description>
+		<Version>1.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_CNTR</UpdateId>
+		<BuildNumber>100</BuildNumber>
+	</Information>
+</ScriptInfo>

@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>ChatBlock</Name>
+		<Description>Automatically blocks the creation of single and group participant conversation windows!</Description>
+		<Version>1.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_CHBL</UpdateId>
+		<BuildNumber>100</BuildNumber>
+	</Information>
+</ScriptInfo>

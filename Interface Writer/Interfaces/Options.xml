@@ -1,0 +1,452 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndOptionsMenu" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Options...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Options...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="213" Height="132">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="ButtonControl" Id="BtnGeneral">
+			<Position Left="3" Top="-1" Width="93">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-settings</Name>
+			</Image>
+			<Caption>&amp;General</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSaving">
+			<Position Left="102" Top="-1" Width="93">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Saving</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnFormat">
+			<Position Left="3" Top="29" Width="93">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-control</Name>
+			</Image>
+			<Caption>&amp;Formats</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnDebug">
+			<Position Left="102" Top="29" Width="93">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>&amp;Debug</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnDefault">
+			<Position Left="3" Top="59" Width="116">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-return</Name>
+			</Image>
+			<Caption>&amp;Back to Default</Caption>
+			<Help>Reset all settings to their defaults...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="125" Top="59" Width="70">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Close</Caption>
+			<Help>Close the options window.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndOptionsGeneral" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Options...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Options...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="213" Height="210">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtCode">
+			<Position Left="3" Top="2" Width="30">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Code:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtCode">
+			<Position Left="37" Top="-1" Width="157">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtCodeDesc">
+			<Position Left="3" Top="21" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>This is the font that will be used for editing XML code directly (for extra code and source code windows).</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtDouble">
+			<Position Left="3" Top="71" Width="61">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Double-click:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbDouble">
+			<Position Left="68" Top="68" Width="126">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtDoubleDesc">
+			<Position Left="3" Top="90" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>The selected action will be executed when a window is double-clicked in the grid of the window manager.</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="3" Top="137" Width="65">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save these options.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="120" Top="137" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the option changes.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndOptionsSaving" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Options...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Options...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="213" Height="249">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="CheckBoxControl" Id="ChkSaveAction">
+			<Position Left="3" Top="-1" Width="171" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Automatically save after &amp;actions</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSaveActionDesc">
+			<Position Left="3" Top="15" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, the XML file will be saved when a window, control or element is added, edited or deleted.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkSaveMins">
+			<Position Left="3" Top="61" Width="138" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Automatically save &amp;every</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtSaveMins">
+			<Position Left="144" Top="58" Width="26">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSaveMins">
+			<Position Left="173" Top="61" Width="22" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>mins</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSaveMinsDesc">
+			<Position Left="3" Top="80" Width="192" Height="28">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, the XML file will be saved every specified number of minutes.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkBackup">
+			<Position Left="3" Top="113" Width="177" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Automatically save &amp;backup copies</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtBackupDesc">
+			<Position Left="3" Top="129" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, backups of open files are made in case of crashes.  Any files are recovered at the next startup.</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="3" Top="176" Width="65">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save these options.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="120" Top="176" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the option changes.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndOptionsFormat" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Options...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Options...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="213" Height="198">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="CheckBoxControl" Id="ChkTabs">
+			<Position Left="3" Top="-1" Width="147" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Use &amp;tabs for XML tag levels</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTabsDesc">
+			<Position Left="3" Top="15" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, the output XML code will be formatted with tabs to represent the number of levels (or nodes) in.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkSystemTags">
+			<Position Left="3" Top="61" Width="163" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Include system tags on export</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSystemTagsDesc">
+			<Position Left="3" Top="77" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, additional data (such as if a window was made with the builder) will be added into a separate tag.</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="3" Top="125" Width="65">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save these options.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="120" Top="125" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the option changes.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndOptionsDebug" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Options...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Options...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="213" Height="260">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="CheckBoxControl" Id="ChkDebug">
+			<Position Left="3" Top="-1" Width="166" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Send messages to script debug</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtDebugDesc">
+			<Position Left="3" Top="15" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, additional messages will be posted to the Script Debug, and log options will be available.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkDebugNotif">
+			<Position Left="3" Top="61" Width="189" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Include message notification events</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtDebugNotifDesc">
+			<Position Left="3" Top="77" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, message notifications will also be displayed in the Script Debug (this may slow the script down).</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkDebugTimer">
+			<Position Left="3" Top="123" Width="169" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Include timer completion events</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtDebugTimerDesc">
+			<Position Left="3" Top="139" Width="192" Height="41">
+				<Units>AllPixels</Units>
+			</Position>
+			<Transparency>128</Transparency>
+			<Caption>If enabled, timer completions will also be displayed in the Script Debug (this may also slow the script down).</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="3" Top="187" Width="65">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save these options.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="120" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the option changes.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

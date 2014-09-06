@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Flip Status</Name>
+		<Description>Continuously change your status, cycling through every status, or online and offline only, or even your own custom status list!</Description>
+		<Version>1.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_FLST</UpdateId>
+		<BuildNumber>100</BuildNumber>
+	</Information>
+</ScriptInfo>

@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Plus! Profiles</Name>
+		<Description>A quicker way to enable a new name, PSM, DP, status, AutoMessage, font colour and more.</Description>
+		<Version>1.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_PRFL</UpdateId>
+		<BuildNumber>100</BuildNumber>
+	</Information>
+</ScriptInfo>

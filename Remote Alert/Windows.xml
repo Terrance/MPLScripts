@@ -1,0 +1,172 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndMessage" Version="1">
+
+	<Attributes>
+		<Caption>Remote Alert | Message</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+	</TitleBar>
+	
+	<Position Width="218" Height="141">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>218</MinWidth>
+			<MinHeight>141</MinHeight>
+		</Resizeable>
+	</Position>
+	
+	<DialogTmpl/>
+		
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgAlert">
+			<Position Top="3" Left="2"/>
+			<Image><Name>Alert</Name></Image>
+			<Help>Remote Alert</Help>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtSender">
+			<Transparency>150</Transparency>
+			<Position Top="1" Width="59" Left="27"/>
+			<Caption>Message sent by:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtEmail">
+			<Position Top="11" Width="105" Left="27"><Anchor Horizontal="LeftRightFixed"/></Position>
+			<Caption>(unknown sender)</Caption>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkNew">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="15" Left="2"/>
+			<Caption>New</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkForward">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="28" Left="19"/>
+			<Caption>Forward</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkDelete">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="22" Left="50"/>
+			<Caption>Delete</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkDisable">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="45" Left="88"><Anchor Horizontal="RightFixed"/></Position>
+			<Caption>Disable Alerts</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtMessage">
+			<Position Top="37" Width="131" Left="2" Height="40"><Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/></Position>
+			<Attributes><ReadOnly>true</ReadOnly><Multiline>true</Multiline></Attributes>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndCreate" Version="1">
+
+	<Attributes>
+		<Caption>Remote Alert | Create</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+	</TitleBar>
+	
+	<Position Width="218" Height="141">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>218</MinWidth>
+			<MinHeight>141</MinHeight>
+		</Resizeable>
+	</Position>
+	
+	<DialogTmpl/>
+		
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgAlert">
+			<Position Top="3" Left="2"/>
+			<Image><Name>Alert</Name></Image>
+			<Help>Remote Alert</Help>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtSender">
+			<Transparency>150</Transparency>
+			<Position Top="1" Width="71" Left="27"/>
+			<Caption>Sending message to:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtEmail">
+			<Position Top="11" Width="105" Left="27"><Anchor Horizontal="LeftRightFixed"/></Position>
+			<Caption>(unknown receiver)</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkSend">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="17" Left="2"/>
+			<Caption>Send</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkCancel">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="23" Left="21"/>
+			<Caption>Cancel</Caption>
+		</Control>
+		<Control xsi:type="LinkControl" Id="LnkOpen">
+			<Transparency>150</Transparency>
+			<Position Top="25" Width="63" Left="70"><Anchor Horizontal="RightFixed"/></Position>
+			<Caption>Open Conversation</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtMessage">
+			<Position Top="37" Width="131" Left="2" Height="40"><Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/></Position>
+			<Attributes><Multiline>true</Multiline></Attributes>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Remote Alert...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Remote Alert (Version 1.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

@@ -1,0 +1,1187 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndWriterManageControls" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Controls: loading...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Controls: loading...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="795" Height="270">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>605</MinWidth>
+			<MinHeight>158</MinHeight>
+		</Resizeable>
+	</Position>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="LinkControl" Id="LnkHelp">
+			<Position Left="679" Top="-20" Width="98">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>&amp;Help guide: disabled</Caption>
+			<Help>Toggle the help guide.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave" Enabled="False">
+			<Position Left="3" Top="-2" Width="62" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save this interface file.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnReturn">
+			<Position Left="70" Top="-2" Width="75" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-return</Name>
+			</Image>
+			<Caption>&amp;Return</Caption>
+			<Help>Return to the window manager.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnMulti">
+			<Position Left="394" Top="-2" Width="80" Height="25">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-control-multi</Name>
+			</Image>
+			<Caption>&amp;Multiple</Caption>
+			<Help>Perform actions to multiple controls.</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnNew">
+			<Position Left="479" Top="-2" Width="85">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-control-add</Name>
+			</Image>
+			<Menu Id="MnuNew" VPos="Bottom" HPos="CenterLeft">
+				<MenuEntry Id="MnuAdd">&amp;Add Control...</MenuEntry>
+				<MenuEntry Id="MnuBuild">&amp;Build Control...</MenuEntry>
+			</Menu>
+			<Caption>&amp;New...</Caption>
+			<Help>Add a new control to the interface...</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnSelection" Enabled="False">
+			<Position Left="569" Top="-2" Width="100">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-control-edit</Name>
+			</Image>
+			<Menu Id="MnuFile" VPos="Bottom" HPos="CenterRight">
+				<MenuEntry Id="MnuEdit">&amp;Edit Control...</MenuEntry>
+				<MenuEntry Id="MnuRename">&amp;Rename Control</MenuEntry>
+				<MenuEntry Id="MnuDelete">&amp;Delete Control</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuCut">&amp;Cut Control</MenuEntry>
+				<MenuEntry Id="MnuCopy">Co&amp;py Control</MenuEntry>
+			</Menu>
+			<Caption>Se&amp;lection</Caption>
+			<Help>Manipulate the selected control.</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnClipboard" Enabled="False">
+			<Position Left="674" Top="-2" Width="105" Height="25">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-clipboard</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Bottom" HPos="CenterRight">
+				<MenuEntry Id="MnuPaste">&amp;Paste Control</MenuEntry>
+				<MenuEntry Id="MnuData">Clipboard &amp;Data...</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuClear">&amp;Clear Clipboard</MenuEntry>
+			</Menu>
+			<Caption>&amp;Clipboard</Caption>
+			<Help>Manage windows on the clipboard.</Help>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstControls">
+			<Position Left="3" Top="28" Width="776" Height="177">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<AllowEditText>true</AllowEditText>
+			</Attributes>
+			<ReportView>
+				<ShowGridLines>true</ShowGridLines>
+				<SortColHeader>true</SortColHeader>
+				<HeaderDragDrop>true</HeaderDragDrop>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>ID</ColumnId>
+					<Label>Control ID</Label>
+					<Width>26</Width>
+				</Column>
+				<Column>
+					<ColumnId>Type</ColumnId>
+					<Label>Control Type</Label>
+					<Width>24</Width>
+				</Column>
+				<Column>
+					<ColumnId>Left</ColumnId>
+					<Label>Left</Label>	
+					<Width>7</Width>
+				</Column>
+				<Column>
+					<ColumnId>Top</ColumnId>
+					<Label>Top</Label>	
+					<Width>6</Width>
+				</Column>
+				<Column>
+					<ColumnId>Width</ColumnId>
+					<Label>Width</Label>	
+					<Width>8</Width>
+				</Column>
+				<Column>
+					<ColumnId>Height</ColumnId>
+					<Label>Height</Label>	
+					<Width>9</Width>
+				</Column>
+				<Column>
+					<ColumnId>Caption</ColumnId>
+					<Label>Caption</Label>	
+					<Width>20</Width>
+				</Column>
+			</Columns>
+			<Images>
+				<SmallIcons>
+					<Image Id="Control">
+						<Name>icon-control</Name>
+					</Image>
+				</SmallIcons>
+			</Images>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatusBar">
+			<Position Left="2" Top="208" Width="776">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Caption>Interface Writer is loading control information.  Please wait a moment...</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterAddControl" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Add a control...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Add a control...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="275" Height="345">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtId">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Identification: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtId">
+			<Position Left="80" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter a unique control identifier.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtType">
+			<Position Left="3" Top="27" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Type: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbType">
+			<Position Left="80" Top="25" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the control's type.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPosition">
+			<Position Left="3" Top="52" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Positioning: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtLeft">
+			<Position Left="80" Top="50" Width="57">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's left positioning.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLeft">
+			<Position Left="141" Top="50" Width="21" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-minus</Name>
+			</Image>
+			<Help>Make the control's left positioning negative.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtComma">
+			<Position Left="165" Top="53" Width="5">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>,</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTop">
+			<Position Left="176" Top="50" Width="57">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's top positioning.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTop">
+			<Position Left="237" Top="50" Width="21" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-minus</Name>
+			</Image>
+			<Help>Make the control's top positioning negative.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSize">
+			<Position Left="3" Top="77" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Size: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth">
+			<Position Left="80" Top="75" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtXBy">
+			<Position Left="165" Top="78" Width="7">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight">
+			<Position Left="176" Top="75" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's height.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnchorH">
+			<Position Left="3" Top="102" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Anchor (H): </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnchorH">
+			<Position Left="80" Top="100" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the control's horizontal anchor.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnchorV">
+			<Position Left="3" Top="127" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Anchor (V): </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnchorV">
+			<Position Left="80" Top="125" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the control's vertical anchor.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtCaption">
+			<Position Left="3" Top="152" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Caption: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtCaption">
+			<Position Left="80" Top="150" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's caption.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtHelp">
+			<Position Left="3" Top="177" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Help: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHelp">
+			<Position Left="80" Top="175" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's help text (tooltip).</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtLocation">
+			<Position Left="3" Top="202" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Location: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbLocation">
+			<Position Left="80" Top="200" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select if the control should appear in the window's bottom bar.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtComment">
+			<Position Left="3" Top="227" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Comment: </Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTagOpen">
+			<Position Left="78" Top="228" Width="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&lt;!--</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtComment">
+			<Position Left="102" Top="225" Width="138">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's comment (placed above the control in the interface).</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTagClose">
+			<Position Left="242" Top="228" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>--&gt;</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAttributes">
+			<Position Left="3" Top="250" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Attributes:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkEnabled">
+			<Position Left="80" Top="250" Width="55" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Enabled</Caption>
+			<Help>Allow this control to be interacted with.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkVisible">
+			<Position Left="143" Top="250" Width="46" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Visible</Caption>
+			<Help>Display this control on the window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnAdd" Enabled="False">
+			<Position Left="3" Top="272" Width="60">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-control-add</Name>
+			</Image>
+			<Caption>&amp;Add</Caption>
+			<Help>Add this control.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode">
+			<Position Left="67" Top="272" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="183" Top="272" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the control creation.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterEditControl" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Edit a control...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Edit a control...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="275" Height="345">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtId">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Identification: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtId">
+			<Position Left="80" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter a unique control identifier.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtType">
+			<Position Left="3" Top="27" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Type: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbType">
+			<Position Left="80" Top="25" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the control's type.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtPosition">
+			<Position Left="3" Top="52" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Positioning: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtLeft">
+			<Position Left="80" Top="50" Width="57">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's left positioning.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLeft">
+			<Position Left="141" Top="50" Width="21" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-minus</Name>
+			</Image>
+			<Help>Make the control's left positioning negative.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtComma">
+			<Position Left="165" Top="53" Width="5">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>,</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTop">
+			<Position Left="176" Top="50" Width="57">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's top positioning.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTop">
+			<Position Left="237" Top="50" Width="21" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-minus</Name>
+			</Image>
+			<Help>Make the control's top positioning negative.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSize">
+			<Position Left="3" Top="77" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Size: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth">
+			<Position Left="80" Top="75" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtXBy">
+			<Position Left="165" Top="78" Width="7">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight">
+			<Position Left="176" Top="75" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the control's height.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnchorH">
+			<Position Left="3" Top="102" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Anchor (H): </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnchorH">
+			<Position Left="80" Top="100" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the control's horizontal anchor.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnchorV">
+			<Position Left="3" Top="127" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Anchor (V): </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnchorV">
+			<Position Left="80" Top="125" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the control's vertical anchor.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtCaption">
+			<Position Left="3" Top="152" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Caption: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtCaption">
+			<Position Left="80" Top="150" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's caption.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtHelp">
+			<Position Left="3" Top="177" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Help: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHelp">
+			<Position Left="80" Top="175" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's help text (tooltip).</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtLocation">
+			<Position Left="3" Top="202" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Location: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbLocation">
+			<Position Left="80" Top="200" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select if the control should appear in the window's bottom bar.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtComment">
+			<Position Left="3" Top="227" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Comment: </Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTagOpen">
+			<Position Left="78" Top="228" Width="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&lt;!--</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtComment">
+			<Position Left="102" Top="225" Width="138">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's comment (placed above the control in the interface).</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTagClose">
+			<Position Left="242" Top="228" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>--&gt;</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAttributes">
+			<Position Left="3" Top="250" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Attributes:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkEnabled">
+			<Position Left="80" Top="250" Width="53" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Enabled</Caption>
+			<Help>Allow this control to be interacted with.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkVisible">
+			<Position Left="143" Top="250" Width="44" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Visible</Caption>
+			<Help>Display this control on the window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnEdit">
+			<Position Left="3" Top="272" Width="60">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-control-edit</Name>
+			</Image>
+			<Caption>&amp;Edit</Caption>
+			<Help>Edit this control.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode">
+			<Position Left="67" Top="272" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="183" Top="272" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the control creation.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterSelectControls" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Select and manage multiple controls...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Select and manage multiple controls...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="420" Height="184">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="ListViewControl" Id="LstControls">
+			<Position Left="3" Top="-2" Width="401" Height="108">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<MultipleSel>true</MultipleSel>
+			</Attributes>
+			<SmallIconView>
+				<ItemsAlign>Top</ItemsAlign>
+			</SmallIconView>
+			<Columns>
+				<Column>
+					<ColumnId>ID</ColumnId>
+					<Label>Control ID</Label>
+				</Column>
+			</Columns>
+			<Images>
+				<SmallIcons>
+					<Image Id="Control">
+						<Name>icon-control</Name>
+					</Image>
+				</SmallIcons>
+			</Images>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnAction" Enabled="False">
+			<Position Left="3" Top="111" Width="85">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<Image>
+				<Name>icon-control-multi</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Top" HPos="CenterLeft">
+				<MenuEntry Id="MnuEdit">&amp;Edit Control(s)...</MenuEntry>
+				<MenuEntry Id="MnuDelete">&amp;Delete Control(s)</MenuEntry>
+			</Menu>
+			<Caption>&amp;Action</Caption>
+			<Help>Manipulate the selected control(s).</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnSelection">
+			<Position Left="93" Top="111" Width="100">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-element</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Top" HPos="CenterLeft">
+				<MenuEntry Id="MnuAll">Select &amp;All</MenuEntry>
+				<MenuEntry Id="MnuNone">Select &amp;None</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuInvert">&amp;Invert Selection</MenuEntry>
+			</Menu>
+			<Caption>Se&amp;lection</Caption>
+			<Help>Manipulate the control selection.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSort">
+			<Position Left="198" Top="111" Width="65" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-return</Name>
+			</Image>
+			<Caption>&amp;Sort</Caption>
+			<Help>Sort controls in the window alphabetically.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="334" Top="111" Width="70" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Close</Caption>
+			<Help>Close the multiple control manager.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterEditMultiControls" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Edit some controls...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Edit some controls...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="277" Height="345">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtCtrls">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Controls:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtCtrls" Visible="False">
+			<Position Left="82" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbCtrls">
+			<Position Left="82" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>These are the controls that will be edited.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkType">
+			<Position Left="3" Top="27" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Type: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbType" Enabled="False">
+			<Position Left="82" Top="25" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the controls' type.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkPosition">
+			<Position Left="3" Top="52" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Positioning: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtLeft" Enabled="False">
+			<Position Left="82" Top="50" Width="57">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the controls' left positioning.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLeft" Enabled="False">
+			<Position Left="143" Top="50" Width="21" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-minus</Name>
+			</Image>
+			<Help>Make the controls' left positioning negative.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtComma" Enabled="False">
+			<Position Left="167" Top="53" Width="5">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>,</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTop" Enabled="False">
+			<Position Left="178" Top="50" Width="57">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the controls' top positioning.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTop" Enabled="False">
+			<Position Left="239" Top="50" Width="21" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-minus</Name>
+			</Image>
+			<Help>Make the controls' top positioning negative.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkSize">
+			<Position Left="3" Top="77" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Size: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth" Enabled="False">
+			<Position Left="82" Top="75" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the controls' width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtXBy" Enabled="False">
+			<Position Left="167" Top="78" Width="7">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight" Enabled="False">
+			<Position Left="178" Top="75" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the controls' height.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkAnchorH">
+			<Position Left="3" Top="102" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Anchor (H): </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnchorH" Enabled="False">
+			<Position Left="82" Top="100" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the controls' horizontal anchor.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkAnchorV">
+			<Position Left="3" Top="127" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Anchor (V): </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnchorV" Enabled="False">
+			<Position Left="82" Top="125" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the controls' vertical anchor.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkCaption">
+			<Position Left="3" Top="152" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Caption: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtCaption" Enabled="False">
+			<Position Left="82" Top="150" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the controls' caption.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkHelp">
+			<Position Left="3" Top="177" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Help: </Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHelp" Enabled="False">
+			<Position Left="82" Top="175" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the controls' help text (tooltip).</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkLocation">
+			<Position Left="3" Top="202" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Location: </Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbLocation" Enabled="False">
+			<Position Left="82" Top="200" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select if these controls should appear in the window's bottom bar.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkComment">
+			<Position Left="3" Top="227" Width="71">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Comment: </Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTagOpen" Enabled="False">
+			<Position Left="78" Top="228" Width="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&lt;!--</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtComment" Enabled="False">
+			<Position Left="102" Top="225" Width="138">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the control's comment (placed above the control in the interface).</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTagClose" Enabled="False">
+			<Position Left="242" Top="228" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>--&gt;</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAttributes">
+			<Position Left="3" Top="250" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Attributes:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkEnabled">
+			<Position Left="82" Top="250" Width="53" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Enabled</Caption>
+			<Help>Allow these controls to be interacted with.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkVisible">
+			<Position Left="145" Top="250" Width="44" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Visible</Caption>
+			<Help>Display these controls on the window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnEdit">
+			<Position Left="3" Top="272" Width="60">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-control-edit</Name>
+			</Image>
+			<Caption>&amp;Edit</Caption>
+			<Help>Edit these controls.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkCode">
+			<Position Left="72" Top="277" Width="13" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Apply new additional code to the selected controls.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode" Enabled="False">
+			<Position Left="89" Top="272" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="185" Top="272" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the control edit.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

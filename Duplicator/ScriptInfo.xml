@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Duplicator</Name>
+		<Description>Pretend to be anyone on your contact list!  Steal their name, PSM and DP, complete with automatic updating!</Description>
+		<Version>1.2</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_DPLC</UpdateId>
+		<BuildNumber>120</BuildNumber>
+	</Information>
+</ScriptInfo>

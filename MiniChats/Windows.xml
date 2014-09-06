@@ -1,0 +1,176 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndMiniChat" Version="1">
+
+	<Attributes><Caption>MiniChat</Caption></Attributes>
+
+	<TitleBar><AllowMinimize>false</AllowMinimize></TitleBar>
+
+	<DialogTmpl/>
+
+	<Position Width="120" Height="110">
+		<Resizeable Allowed="BothSides">
+			<MinWidth>120</MinWidth>
+			<MinHeight>110</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtAdr">
+			<Transparency>100</Transparency>
+			<Position Left="0" Top="0" Width="57"><Anchor Horizontal="LeftRightFixed"/></Position>
+			<Caption>Please wait...</Caption>
+		</Control>
+		<Control xsi:type="RadioControl" Id="RdoClr">
+			<Position Left="58" Top="-1" Width="9" Height="9"><Anchor Horizontal="RightFixed"/></Position>
+			<Help>Clear the conversation window...</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkTop">
+			<Position Left="69" Top="-1" Width="9" Height="9"><Anchor Horizontal="RightFixed"/></Position>
+			<Help>Keep this window on top of others...</Help>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtHst">
+			<Position Left="0" Top="10" Width="111" Height="78"><Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/></Position>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+			<Help>View your entire conversation\nhistory with this contact...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnMre">
+			<Position Left="0" Top="90" Width="14" Height="13"><Anchor Vertical="BottomFixed"/></Position>
+			<Caption>...</Caption>
+			<Help>More functions...</Help>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtMsg">
+			<Position Left="16" Top="90" Width="81"><Anchor Horizontal="LeftRightFixed" Vertical="BottomFixed"/></Position>
+			<Attributes><IsDefault>true</IsDefault></Attributes>
+			<Help>Enter your message here...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSnd">
+			<Position Left="99" Top="90" Width="12" Height="13"><Anchor Horizontal="RightFixed" Vertical="BottomFixed"/></Position>
+			<Attributes><IsDefault>true</IsDefault></Attributes>
+			<Caption>»</Caption>
+			<Help>Send message (Enter)...</Help>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndContact" Version="1">
+
+	<Attributes><Caption>MiniChats</Caption></Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>MiniChats</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="330" Height="160">
+		<Resizeable Allowed="BothSides">
+			<MinWidth>330</MinWidth>
+			<MinHeight>160</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<LeftControls>
+				<Control xsi:type="ButtonControl" Id="BtnRfs">
+					<Position Left="0" Top="0" Width="58"/>
+					<Image><Name>icon-refresh</Name></Image>
+					<Caption>&amp;Refresh</Caption>
+				</Control>
+			</LeftControls>
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Left="0" Top="0" Width="45"/>
+					<Image><Name>sounds-check</Name></Image>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtIfo">
+			<Transparency>100</Transparency>
+			<Position Left="1" Top="-2" Width="165"/>
+			<Caption>Select a contact from below to start a MiniChat...</Caption>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstCts">
+			<Position Left="1" Top="10" Width="318" Height="91"><Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/></Position>
+			<Help>Select a contact's email address...</Help>
+			<ReportView><SortColHeader>true</SortColHeader></ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>Name</ColumnId>
+					<Label>Name</Label>
+					<Width>50</Width>
+				</Column>
+				<Column>
+					<ColumnId>Email</ColumnId>
+					<Label>Email</Label>
+					<Width>38</Width>
+				</Column>
+				<Column>
+					<ColumnId>Status</ColumnId>
+					<Label>Status</Label>	
+					<Width>11</Width>
+				</Column>
+			</Columns>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndSubclass" Version="1">
+
+	<Attributes><ShowInTaskbar>false</ShowInTaskbar></Attributes>
+
+	<DialogTmpl/>
+
+	<Position Width="0" Height="0"/>
+
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About MiniChats...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>MiniChats (Version 1.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

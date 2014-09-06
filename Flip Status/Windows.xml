@@ -1,0 +1,238 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndSettings" Version="1">
+
+	<Attributes>
+		<Caption>Flip Status: Settings...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Flip Status</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="170" Height="135"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="Ok">
+					<Position Top="0" Width="45" Left="0"/>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt1">
+			<Transparency>125</Transparency>
+			<Position Top="0" Width="164" Left="3"/>
+			<Caption>Please choose how you want to use Flip Status.</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt2">
+			<Position Top="13" Width="65" Left="3"/>
+			<Caption>Messenger version: </Caption>
+			<Help>Select which version of Windows Live Messenger you are using.</Help>
+		</Control>
+		<Control xsi:type="RadioControl" Id="WLM_9">
+			<Position Top="13" Width="14" Left="71"/>
+			<Attributes>
+				<IsNewGroup>true</IsNewGroup>
+				<DwmAnimations>Allow</DwmAnimations>
+			</Attributes>
+			<Caption>9</Caption>
+			<Help>Windows Live Messenger 9 or below...</Help>
+		</Control>
+		<Control xsi:type="RadioControl" Id="WLM_14">
+			<Position Top="13" Width="18" Left="89"/>
+			<Attributes>
+				<IsNewGroup>false</IsNewGroup>
+				<DwmAnimations>Allow</DwmAnimations>
+			</Attributes>
+			<Caption>14</Caption>
+			<Help>Windows Live Messenger 14 beta...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt3">
+			<Position Top="23" Width="24" Left="3"/>
+			<Caption>Mode: </Caption>
+			<Help>Select what kind of statuses you want to appear.</Help>
+		</Control>
+		<Control xsi:type="RadioControl" Id="Mode_1">
+			<Position Top="23" Width="17" Left="30"/>
+			<Attributes>
+				<IsNewGroup>true</IsNewGroup>
+				<DwmAnimations>Allow</DwmAnimations>
+			</Attributes>
+			<Caption>All</Caption>
+			<Help>All statueses...</Help>
+		</Control>
+		<Control xsi:type="RadioControl" Id="Mode_2">
+			<Position Top="23" Width="33" Left="53"/>
+			<Attributes>
+				<IsNewGroup>false</IsNewGroup>
+				<DwmAnimations>Allow</DwmAnimations>
+			</Attributes>
+			<Caption>On/Off</Caption>
+			<Help>Online and appear offline only...</Help>
+		</Control>
+		<Control xsi:type="RadioControl" Id="Mode_3">
+			<Position Top="23" Width="36" Left="91"/>
+			<Attributes>
+				<IsNewGroup>false</IsNewGroup>
+				<DwmAnimations>Allow</DwmAnimations>
+			</Attributes>
+			<Caption>Custom</Caption>
+			<Help>Custom choices of settings...</Help>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Mode_3Edit">
+			<Position Top="23" Width="27" Left="128"/>
+			<Caption>(edit...)</Caption>
+			<Help>Custom choices of settings...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt4">
+			<Position Top="38" Width="53" Left="3"/>
+			<Caption>Refresh period:</Caption>
+			<Help>Enter the length of time between each status change.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="Refresh">
+			<Position Top="36" Width="97" Left="58"/>
+			<Help>Enter the refresh time in milliseconds...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt5">
+			<Position Top="53" Width="102" Left="3"/>
+			<Caption>Flip Status is currently disabled.</Caption>
+			<Help>The status of the Flip Status script is shown here.</Help>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Enable">
+			<Position Top="53" Width="53" Left="108"/>
+			<Caption>Enable</Caption>
+			<Help>Click to enable the Flip Status script...</Help>
+		</Control>
+		<Control xsi:type="LinkControl" Id="Disable">
+			<Position Top="53" Width="53" Left="131"/>
+			<Caption>Disable</Caption>
+			<Help>Click to disable the Flip Status script...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt6">
+			<Transparency>100</Transparency>
+			<Position Top="65" Width="164" Left="3"/>
+			<Caption>All changes will be applied immediately.</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndSetCustom" Version="1">
+
+	<Attributes>
+		<Caption>Flip Status: Custom Setup...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Flip Status</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="116" Height="142"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="Ok">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="Cancel">
+					<Position Top="0" Width="50" Left="0"/>
+					<Image><Name>icon-delete</Name></Image>
+					<Caption>&amp;Cancel</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt1">
+			<Transparency>100</Transparency>
+			<Position Top="0" Width="110" Left="3"/>
+			<Caption>Please select the statuses.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="Online">
+			<Position Top="13" Width="110" Left="3"/>
+			<Caption>Available/Online</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="Busy">
+			<Position Top="23" Width="110" Left="3"/>
+			<Caption>Busy</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="BeRightBack">
+			<Position Top="33" Width="110" Left="3"/>
+			<Caption>Be Right Back</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="Away">
+			<Position Top="43" Width="110" Left="3"/>
+			<Caption>Away</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="InaCall">
+			<Position Top="53" Width="110" Left="3"/>
+			<Caption>In a Call</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="OuttoLunch">
+			<Position Top="63" Width="110" Left="3"/>
+			<Caption>Out to Lunch</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="AppearOffline">
+			<Position Top="73" Width="110" Left="3"/>
+			<Caption>Appear Offline</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Flip Status...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Flip Status (Version 1.0 beta)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

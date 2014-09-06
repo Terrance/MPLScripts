@@ -1,0 +1,97 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndOpenChat" Version="1">
+	<Attributes>
+		<Caption>Open a conversation window...</Caption>
+	</Attributes>
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Open a conversation window...</Text>
+		</Title>
+	</TitleBar>
+	<Position Width="347" Height="150">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOpen">
+					<Position Left="292" Top="2" Width="55"/>
+					<Image><Name>WLMIcon</Name></Image>
+					<Caption>&amp;Open...</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Left="292" Top="2" Width="55"/>
+					<Image><Name>CrossIcon</Name></Image>
+					<Caption>&amp;Cancel</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	<Elements>
+		<Element xsi:type="ImageElement" Id="UserImage">
+			<Position Top="-3" Left="-3"/>
+			<Image><Name>UserImage</Name></Image>
+		</Element>
+	</Elements>
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Transparency>100</Transparency>
+			<Position Left="58" Top="3" Width="277">
+				<Anchor Horizontal="LeftRightFixed"/>
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<Caption>Enter a contact's email address to start a conversation.</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtAddress">
+			<Position Left="58" Top="23" Width="267">
+				<Anchor Horizontal="LeftRightFixed"/>
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<Help>Enter a contact's email address...</Help>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+	<Attributes>
+		<Caption>About ChatBlock...</Caption>
+	</Attributes>
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	<Position Width="130" Height="85"/>
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>ChatBlock (Version 1.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

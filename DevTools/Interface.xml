@@ -1,0 +1,300 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndTools" Version="1">
+
+	<Attributes>
+		<Caption>DevTools</Caption>
+		<TopMost>true</TopMost>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>DevTools</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="179" Height="72">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="ComboBoxControl" Id="CmbSelect">
+			<Position Left="2" Top="-3" Width="131">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnAbout" Enabled="False">
+			<Position Left="138" Top="-6" Width="25">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-info</Name>
+			</Image>
+			<Help>View information about this tool.</Help>
+		</Control>
+	</Controls>
+
+	<Elements>
+		<Element xsi:type="LineElement" Id="LneTop">
+			<Position Left="2" Top="23" Width="160" Height="0">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Color>
+				<BaseColor/>
+			</Color>
+		</Element>
+		<Element xsi:type="FigureElement" Id="FgrBox">
+			<Position Left="2" Top="23" Width="160">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Figure>
+				<Rectangle/>
+			</Figure>
+			<Border>
+				<Color>
+					<BaseColor/>
+				</Color>
+			</Border>
+		</Element>
+	</Elements>
+
+</Window>
+
+<Window Id="WndInstall" Version="1">
+
+	<Attributes>
+		<Caption>Install / DevTools</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Install / DevTools</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="400" Height="300">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>400</MinWidth>
+			<MinHeight>300</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="0" Top="0" Width="0">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtInstall">
+			<Position Left="3" Top="-3" Width="380" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AutoAdjustWidth>true</AutoAdjustWidth>
+			</Attributes>
+			<Caption>Are you sure you want to install this tool?</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnInstall">
+			<Position Left="219" Top="-13" Width="80">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>sounds-check</Name>
+			</Image>
+			<Caption>Install</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="304" Top="-13" Width="80">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-delete</Name>
+			</Image>
+			<Caption>Cancel</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtCode">
+			<Position Left="2" Top="16" Width="382" Height="236">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndMulti" Version="1">
+
+	<Attributes>
+		<Caption>Install / DevTools</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Install / DevTools</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="398" Height="67">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtIDs">
+			<Position Left="0" Top="0" Width="0">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSelect">
+			<Position Left="3" Top="0" Width="73" Height="12">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Tools to install:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbSelect">
+			<Position Left="79" Top="-3" Width="131">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnInstall">
+			<Position Left="216" Top="-6" Width="80">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>sounds-check</Name>
+			</Image>
+			<Caption>Install</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnDelete">
+			<Position Left="301" Top="-6" Width="80">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-delete</Name>
+			</Image>
+			<Caption>Delete</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndManage" Version="1">
+
+	<Attributes>
+		<Caption>Manage / DevTools</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Manage / DevTools</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="402" Height="67">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtIDs">
+			<Position Left="0" Top="0" Width="0">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSelect">
+			<Position Left="3" Top="0" Width="72" Height="12">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Installed tools:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbSelect">
+			<Position Left="78" Top="-3" Width="131">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnToggle">
+			<Position Left="215" Top="-6" Width="80">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>sounds-check</Name>
+			</Image>
+			<Caption>Enable</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnRemove">
+			<Position Left="300" Top="-6" Width="85">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-delete</Name>
+			</Image>
+			<Caption>Remove</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndBrowser" Version="1">
+
+	<Attributes>
+		<Caption>Browser: (loading) / DevTools</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Browser: (loading) / DevTools</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="620" Height="420">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>620</MinWidth>
+			<MinHeight>420</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="BrowserControl" Id="BrwDocument">
+			<Position Left="3" Top="-3" Width="600" Height="374">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

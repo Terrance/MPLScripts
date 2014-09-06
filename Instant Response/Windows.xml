@@ -1,0 +1,182 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndControl" Version="1">
+
+	<Attributes>
+		<Caption>Instant Response Control Centre</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Instant Response Control Centre</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="250" Height="185"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<LeftControls>
+				<Control xsi:type="ButtonControl" Id="BtnEnable">
+					<Position Top="0" Width="45" Left="0"/>
+					<Caption>&amp;Enable</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnDisable">
+					<Position Top="0" Width="45" Left="0"/>
+					<Caption>&amp;Disable</Caption>
+				</Control>
+			</LeftControls>
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnApply">
+					<Position Top="0" Width="50" Left="0"/>
+					<Attributes>
+						<IsDefault>true</IsDefault>
+					</Attributes>
+					<Image Margin="4">
+						<Name>icon-floppy</Name>
+					</Image>
+					<Caption>&amp;Apply</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="40" Left="0"/>
+					<Caption>&amp;Cancel</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt1">
+			<Transparency>125</Transparency>
+			<Position Top="0" Width="234" Left="3"/>
+			<Caption>Use this Control Centre to customise the Instant Response setup.</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt2">
+			<Position Top="13" Width="234" Left="3"/>
+			<Caption>Enter a new response message...</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EditMessage">
+			<Position Top="25" Width="234" Left="3" Height="38"/>
+			<Help>Enter the contents of the response message.</Help>
+			<Attributes>
+				<Multiline>true</Multiline>
+			</Attributes>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxt3">
+			<Position Top="69" Width="234" Left="3"/>
+			<Caption>Enter a new response timer...  (the value must be at least 100)</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EditTimer">
+			<Position Top="81" Width="221" Left="3"/>
+			<Help>Enter the length of the response timer.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="MsTimeTxt">
+			<Position Top="83" Width="10" Left="226"/>
+			<Caption>ms</Caption>
+			<Help>The time you enter will be in milliseconds (1000 milliseconds is 1 second).</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkPlusAMStyle">
+			<Position Top="103" Width="10" Left="3"/>
+			<Help>If checked, auto-messages (excluding /commands) will be sent using the Messenger Plus! auto-message text style.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="PlusAMStyleTxt">
+			<Position Top="103" Width="223" Left="14"/>
+			<Caption>Use the Messenger Plus! auto-message style...</Caption>
+			<Help>If checked, auto-messages (excluding /commands) will be sent using the Messenger Plus! auto-message text style.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkSignInAlert">
+			<Position Top="115" Width="10" Left="3"/>
+			<Help>If checked, a toast will appear at sign-in if the responses are still turned on.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="SignInAlertTxt">
+			<Position Top="115" Width="223" Left="14"/>
+			<Caption>Alert me at sign-in if responses are still active...</Caption>
+			<Help>If checked, a toast will appear at sign-in if the responses are still turned on.</Help>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndSigninAlert" Version="1">
+
+	<Attributes>
+		<Caption>Instant Response</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Instant Response</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="190" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnYes">
+					<Position Top="0" Width="120" Left="0"/>
+					<Attributes>
+						<IsDefault>true</IsDefault>
+					</Attributes>
+					<Caption>&amp;Yes, turn the responses off...</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnNo">
+					<Position Top="0" Width="35" Left="0"/>
+					<Caption>&amp;No</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Warning: Instant Response is still turned on.  Anyone\nwho contacts you will be sent an automatic response\nmessage.  Do you want to turn responses off?</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Instant Response...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="120"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes>
+						<IsDefault>true</IsDefault>
+					</Attributes>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="70"/>
+			<Caption>Instant Response (Version 2.0)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)\nBased on 'No Response Responder'.\n\nSpecial thanks to 'Matty' and 'Volv'\nfrom the Messenger Plus! forums.</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

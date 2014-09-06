@@ -1,0 +1,856 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndNew" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  New poll...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  New poll...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="232" Height="187">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="3" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtQuestion">
+			<Position Left="57" Top="0" Width="158">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter your question.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnswer">
+			<Position Left="3" Top="25" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Answer:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnswer">
+			<Position Left="57" Top="22" Width="158">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the answer type.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtChoices" Enabled="False">
+			<Position Left="3" Top="47" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Choices:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtChoices" Enabled="False">
+			<Position Left="57" Top="44" Width="158">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the possible answers to your question, separated by pipe '|' characters.\nNote that there must be at least two options entered.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtContacts">
+			<Position Left="3" Top="69" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Contacts:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbContacts">
+			<Position Left="57" Top="66" Width="158">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the contacts that will receive the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtVoters" Enabled="False">
+			<Position Left="3" Top="91" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Voters:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtVoters" Enabled="False">
+			<Position Left="57" Top="88" Width="158">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter individual contact email addresses, separated by pipe '|' characters.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnPoll" Enabled="False">
+			<Position Left="3" Top="115" Width="90">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Start the poll!</Caption>
+			<Help>Click to start your poll...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="165" Top="115" Width="50">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Quit the poll creation...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndTrue" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  You've got a poll!</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  You've got a poll!</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="194">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtFrom">
+			<Position Left="3" Top="2" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>From:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtFrom">
+			<Position Left="57" Top="0" Width="196" Height="32">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the contact that sent you the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="3" Top="35" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Poll ID:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtID">
+			<Position Left="57" Top="33" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the ID number of the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="57" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtQuestion">
+			<Position Left="57" Top="55" Width="196" Height="31">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the question being asked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnswer">
+			<Position Left="3" Top="95" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Answer:</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTrue">
+			<Position Left="57" Top="92" Width="97">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Caption>&amp;True!</Caption>
+			<Help>Click here if you believe the answer to be true.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnFalse">
+			<Position Left="156" Top="92" Width="97">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Caption>&amp;False!</Caption>
+			<Help>Click here if you believe the answer to be false.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnVote" Enabled="False">
+			<Position Left="3" Top="122" Width="90">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Make my vote:</Caption>
+			<Help>Click this button to submit your poll answer.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtVote">
+			<Position Left="97" Top="126" Width="104">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Choose...</Caption>
+			<Help>This is what you are going to vote for.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="203" Top="122" Width="50">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Don't vote in this poll...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndYes" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  You've got a poll!</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  You've got a poll!</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="194">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtFrom">
+			<Position Left="3" Top="2" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>From:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtFrom">
+			<Position Left="57" Top="0" Width="196" Height="32">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the contact that sent you the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="3" Top="35" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Poll ID:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtID">
+			<Position Left="57" Top="33" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the ID number of the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="57" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtQuestion">
+			<Position Left="57" Top="55" Width="196" Height="31">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the question being asked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnswer">
+			<Position Left="3" Top="95" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Answer:</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnYes">
+			<Position Left="57" Top="92" Width="97">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Caption>&amp;Yes!</Caption>
+			<Help>Click here if you believe the answer to be yes.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnNo">
+			<Position Left="156" Top="92" Width="97">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Caption>&amp;No!</Caption>
+			<Help>Click here if you believe the answer to be no.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnVote" Enabled="False">
+			<Position Left="3" Top="122" Width="90">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Make my vote:</Caption>
+			<Help>Click this button to submit your poll answer.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtVote">
+			<Position Left="97" Top="126" Width="104">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Choose...</Caption>
+			<Help>This is what you are going to vote for.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="203" Top="122" Width="50">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Don't vote in this poll...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndNumber" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  You've got a poll!</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  You've got a poll!</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="194">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtFrom">
+			<Position Left="3" Top="2" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>From:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtFrom">
+			<Position Left="57" Top="0" Width="196" Height="32">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the contact that sent you the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="3" Top="35" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Poll ID:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtID">
+			<Position Left="57" Top="33" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the ID number of the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="57" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtQuestion">
+			<Position Left="57" Top="55" Width="196" Height="31">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the question being asked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnswer">
+			<Position Left="3" Top="95" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Answer:</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnMinus">
+			<Position Left="57" Top="92" Width="67">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Caption>&amp;-</Caption>
+			<Help>Click here to subtract one from the current answer.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtAnswer">
+			<Position Left="125" Top="92" Width="60" Height="24">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Center</Align>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter a numerical answer to the question.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnPlus">
+			<Position Left="186" Top="92" Width="67">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Caption>&amp;+</Caption>
+			<Help>Click here to add one from the current answer.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnVote" Enabled="False">
+			<Position Left="3" Top="122" Width="90">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Make my vote!</Caption>
+			<Help>Click this button to submit your poll answer.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="203" Top="122" Width="50">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Don't vote in this poll...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndPrompt" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  You've got a poll!</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  You've got a poll!</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="192">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtFrom">
+			<Position Left="3" Top="2" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>From:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtFrom">
+			<Position Left="57" Top="0" Width="196" Height="32">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the contact that sent you the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="3" Top="35" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Poll ID:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtID">
+			<Position Left="57" Top="33" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the ID number of the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="57" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtQuestion">
+			<Position Left="57" Top="55" Width="196" Height="31">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the question being asked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnswer">
+			<Position Left="3" Top="95" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Answer:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtAnswer">
+			<Position Left="57" Top="92" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter an answer to the question.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnVote" Enabled="False">
+			<Position Left="3" Top="120" Width="90">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Make my vote!</Caption>
+			<Help>Click this button to submit your poll answer.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="203" Top="120" Width="50">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Don't vote in this poll...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndMulti" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  You've got a poll!</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  You've got a poll!</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="192">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtFrom">
+			<Position Left="3" Top="2" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>From:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtFrom">
+			<Position Left="57" Top="0" Width="196" Height="32">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the contact that sent you the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="3" Top="35" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Poll ID:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtID">
+			<Position Left="57" Top="33" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the ID number of the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="57" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtQuestion">
+			<Position Left="57" Top="55" Width="196" Height="31">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the question being asked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAnswer">
+			<Position Left="3" Top="95" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Answer:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbAnswer">
+			<Position Left="57" Top="92" Width="196">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select an answer to the question from the list.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnVote" Enabled="False">
+			<Position Left="3" Top="120" Width="90">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Make my vote!</Caption>
+			<Help>Click this button to submit your poll answer.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtOptions" Visible="False">
+			<Position Left="97" Top="126" Width="104">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="203" Top="120" Width="50">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Don't vote in this poll...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndResults" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Poll  |  The poll results...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Plus! Poll  |  The poll results...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="270" Height="359">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>270</MinWidth>
+			<MinHeight>359</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtID">
+			<Position Left="3" Top="2" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Poll ID:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtID">
+			<Position Left="57" Top="0" Width="196">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the ID number of the poll.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtQuestion">
+			<Position Left="3" Top="24" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Question:</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="EdtQuestion">
+			<Position Left="57" Top="22" Width="196" Height="31">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Attributes>
+				<ReadOnly>true</ReadOnly>
+			</Attributes>
+			<Help>This is the question being asked.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtResults">
+			<Position Left="3" Top="62" Width="48">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>Results:</Caption>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstResults">
+			<Position Left="57" Top="59" Width="196" Height="221">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<ReportView>
+				<HeaderDragDrop>true</HeaderDragDrop>
+				<SortColHeader>true</SortColHeader>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>Voter</ColumnId>
+					<Label>Voter</Label>
+					<Width>60</Width>
+				</Column>
+				<Column>
+					<ColumnId>Answer</ColumnId>
+					<Label>Answer</Label>
+					<Width>40</Width>
+				</Column>
+			</Columns>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="3" Top="287" Width="45">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Caption>&amp;Close</Caption>
+			<Help>Click this button to close the results window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnEnd">
+			<Position Left="198" Top="287" Width="55">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Caption>&amp;End Poll</Caption>
+			<Help>End this poll and stop accepting responses...</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

@@ -1,0 +1,217 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="Time" Version="1">
+
+	<Attributes>
+		<Caption>CountdownDP Time...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>CountdownDP Time...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="160" Height="137"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="50" Left="0"/>
+					<Image><Name>icon-delete</Name></Image>
+					<Caption>&amp;Cancel</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="ITxt1">
+			<Transparency>125</Transparency>
+			<Position Top="0" Width="153" Left="3"/>
+			<Caption>Please enter the time (1 to 60 minutes):</Caption>
+			<Attributes><IsDefault>true</IsDefault></Attributes>
+		</Control>
+		<Control xsi:type="EditControl" Id="ETime">
+			<Position Top="11" Width="143" Left="3"/>
+			<Help>Must be an integer, press Enter to submit...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="ITxt2">
+			<Transparency>125</Transparency>
+			<Position Top="30" Width="153" Left="3"/>
+			<Caption>Optional message (sent to all contacts):</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EMsg">
+			<Position Top="41" Width="143" Left="3" Height="30"/>
+			<Attributes><Multiline>true</Multiline></Attributes>	
+			<Help>Press Enter to submit, Ctrl+Enter for a new line...</Help>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="Progress" Version="1">
+
+	<Attributes>
+		<Caption>CountdownDP</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>CountdownDP</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="150" Height="48"/>
+
+	<DialogTmpl/>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="GLoad">
+			<Position Top="0" Left="2"/>
+			<Image><Name>icon-update</Name></Image>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="ITxt1">
+			<Transparency>100</Transparency>
+			<Position Left="30" Top="-2" Width="113"/>
+			<Caption>Time remaining: ?? minute(s)...</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="ITxt2">
+			<Transparency>100</Transparency>
+			<Position Left="30" Top="8" Width="113"/>
+			<Caption>Press the Esc key to cancel.</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="Completed" Version="1">
+
+	<Attributes>
+		<Caption>CountdownDP</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>CountdownDP</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="157" Height="48"/>
+
+	<DialogTmpl/>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="GLoad">
+			<Position Top="0" Left="2"/>
+			<Image><Name>icon-update</Name></Image>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="ITxt1">
+			<Transparency>100</Transparency>
+			<Position Left="30" Top="-2" Width="121"/>
+			<Caption>CountdownDP has been completed!</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="ITxt2">
+			<Transparency>100</Transparency>
+			<Position Left="30" Top="8" Width="121"/>
+			<Caption>Please close the window to finish.</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="Cancelled" Version="1">
+
+	<Attributes>
+		<Caption>CountdownDP</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>CountdownDP</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="157" Height="48"/>
+
+	<DialogTmpl/>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="GLoad">
+			<Position Top="0" Left="2"/>
+			<Image><Name>icon-update</Name></Image>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="ITxt1">
+			<Transparency>100</Transparency>
+			<Position Left="30" Top="-2" Width="121"/>
+			<Caption>CountdownDP has been cancelled!</Caption>
+		</Control>
+		<Control xsi:type="StaticControl" Id="ITxt2">
+			<Transparency>100</Transparency>
+			<Position Left="30" Top="8" Width="121"/>
+			<Caption>Please close the window to reset.</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="About" Version="1">
+
+	<Attributes>
+		<Caption>About CountdownDP...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="130" Height="85"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Top="0" Width="40" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>CountdownDP (Version 1.1)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

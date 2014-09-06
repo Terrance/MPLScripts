@@ -1,0 +1,320 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndWriterExtraCode" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Enter some additional code...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Enter some additional code...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="325" Height="220">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>325</MinWidth>
+			<MinHeight>220</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="RichEditControl" Id="EdtCode">
+			<Position Left="3" Top="-2" Width="305" Height="144">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<WantReturn>true</WantReturn>
+			</Attributes>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnStore">
+			<Position Left="3" Top="147" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>&amp;Store...</Caption>
+			<Help>Store this code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTab">
+			<Position Left="83" Top="147" Width="60">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-tab</Name>
+			</Image>
+			<Caption>&amp;Tab</Caption>
+			<Help>Insert a tab to the code.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="233" Top="147" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the code addition.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterSourceCode" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | View the source code...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | View the source code...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="387" Height="265">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>387</MinWidth>
+			<MinHeight>265</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="RichEditControl" Id="EdtSource">
+			<Position Left="3" Top="-2" Width="367" Height="190">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<WantReturn>true</WantReturn>
+			</Attributes>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="3" Top="193" Width="65">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save this interface file.</Help>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbDisplay">
+			<Position Left="73" Top="193" Width="217">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Images>
+				<Image Id="Window">
+					<Name>icon-window</Name>
+				</Image>
+				<Image Id="Folder">
+					<Name>icon-load</Name>
+				</Image>
+			</Images>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnReturn">
+			<Position Left="295" Top="193" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-return</Name>
+			</Image>
+			<Caption>&amp;Return</Caption>
+			<Help>Return to the window manager.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterErrors" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Errors during interface loading...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Errors during interface loading...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="445" Height="278">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>445</MinWidth>
+			<MinHeight>278</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="RichEditControl" Id="EdtLog">
+			<Position Left="3" Top="0" Width="424" Height="200">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+			<Help>This is a list of any errors encountered whilst loading the interface.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLoad">
+			<Position Left="3" Top="205" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-load</Name>
+			</Image>
+			<Caption>&amp;Load...</Caption>
+			<Help>Continue loading the file...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="352" Top="205" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the file load.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterEval" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Evaluate some code...</Caption>
+		<TopMost>true</TopMost>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Evaluate some code...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="400" Height="300">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>400</MinWidth>
+			<MinHeight>300</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="CodeEditControl" Id="EdtCode">
+			<Position Left="3" Top="0" Width="380" Height="221">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLoad">
+			<Position Left="3" Top="227" Width="70">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-load</Name>
+			</Image>
+			<Caption>&amp;Load...</Caption>
+			<Help>Load a script file to the evaluator...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="79" Top="227" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>&amp;Save...</Caption>
+			<Help>Save a script file from the evaluator...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnEval">
+			<Position Left="222" Top="227" Width="85">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-tab</Name>
+			</Image>
+			<Caption>&amp;Evaluate</Caption>
+			<Help>Run the code entered into the evaluator.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="313" Top="227" Width="70">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Close</Caption>
+			<Help>Close the evaluation window.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

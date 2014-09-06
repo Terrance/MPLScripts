@@ -1,0 +1,10 @@
+<ScriptInfo xmlns="urn:msgplus:scripts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Information>
+		<Name>Instant Response</Name>
+		<Description>When active, sends contacts a message (with the Plus! "AutoMessage" theme), or a command to change your status, sign out or block them!</Description>
+		<Version>2.0</Version>
+		<AboutUrl>http://www.ww-c.co.nr/</AboutUrl>
+		<UpdateId>WWC_IRSP</UpdateId>
+		<BuildNumber>200</BuildNumber>
+	</Information>
+</ScriptInfo>

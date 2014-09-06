@@ -1,0 +1,145 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndDupAdv" Version="1">
+
+	<Attributes>
+		<Caption>Advanced duplication...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Advanced duplication...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="250" Height="190"/>
+	
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<LeftControls>
+				<Control xsi:type="ButtonControl" Id="BtnRefresh">
+					<Position Top="0" Width="60" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>icon-refresh</Name></Image>
+					<Caption>&amp;Refresh...</Caption>
+					<Help>Reload the name, PSM and DP of the user.</Help>
+				</Control>
+			</LeftControls>
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnDuplicate">
+					<Position Top="0" Width="70" Left="0"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Duplicate!</Caption>
+					<Help>Click to duplicate this user's selected details.</Help>
+				</Control>
+				<Control xsi:type="ButtonControl" Id="BtnCancel">
+					<Position Top="0" Width="55" Left="0"/>
+					<Image><Name>icon-delete</Name></Image>
+					<Caption>&amp;Cancel</Caption>
+					<Help>Click to cancel the duplication.</Help>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxtEmail">
+			<Transparency>125</Transparency>
+			<Position Top="0" Width="234" Left="3"/>
+			<Caption>This is the user to duplicate details from...</Caption>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="RichEditEmail">
+			<Position Top="11" Width="234" Left="3"/>
+			<Help>This is the user that you will steal details from.</Help>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxtFeatures">
+			<Transparency>125</Transparency>
+			<Position Top="30" Width="234" Left="3"/>
+			<Caption>Please select the features to duplicate.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="CheckBoxName">
+			<Position Top="41" Width="31" Left="208"/>
+			<Caption>Name</Caption>
+			<Help>Duplicate the user's display name.</Help>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="RichEditName">
+			<Position Top="41" Width="202" Left="3" Height="20"/>
+			<Help>This is the display name of the user that you will steal details from.</Help>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="CheckBoxPSM">
+			<Position Top="63" Width="31" Left="208"/>
+			<Caption>PSM</Caption>
+			<Help>Duplicate the user's personal status message.</Help>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="RichEditPSM">
+			<Position Top="63" Width="202" Left="3" Height="20"/>
+			<Help>This is the personal status message of the user that you will steal details from.</Help>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="CheckBoxDP">
+			<Position Top="85" Width="31" Left="208"/>
+			<Caption>DP</Caption>
+			<Help>Duplicate the user's display picture.</Help>
+		</Control>
+		<Control xsi:type="RichEditControl" Id="RichEditDP">
+			<Position Top="85" Width="202" Left="3" Height="20"/>
+			<Help>This is the display picture of the user that you will steal details from.</Help>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+		</Control>
+		<Control xsi:type="StaticControl" Id="InfoTxtAdvanced">
+			<Transparency>125</Transparency>
+			<Position Top="111" Width="234" Left="3"/>
+			<Caption>Please select any advanced features you wish to use.</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="CheckBoxUpdate">
+			<Position Top="121" Width="234" Left="3"/>
+			<Caption>Automatically update details upon changes...</Caption>
+			<Help>If the user changes their name, PSM or DP, yours will change automatically.</Help>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndAbout" Version="1">
+
+	<Attributes>
+		<Caption>About Duplicator...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>About...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="130" Height="85"/>
+
+	<DialogTmpl>
+		<BottomBar Style="Plain">
+			<RightControls>
+				<Control xsi:type="ButtonControl" Id="BtnOk">
+					<Position Left="0" Top="0" Width="45"/>
+					<Attributes><IsDefault>true</IsDefault></Attributes>
+					<Image><Name>sounds-check</Name></Image>
+					<Caption>&amp;Ok</Caption>
+				</Control>
+			</RightControls>
+		</BottomBar>
+	</DialogTmpl>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="InfoTxt">
+			<Position Top="0" Width="174" Left="3" Height="30"/>
+			<Caption>Duplicator (Version 1.2)\nBy Whiz @ WhizWeb Community\n(http://www.ww-c.co.nr)</Caption>
+		</Control>
+	</Controls>
+</Window>
+
+</Interfaces>

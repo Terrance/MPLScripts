@@ -1,0 +1,228 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndBrowser" Version="1">
+
+	<Attributes>
+		<Caption>Plus! Browser</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+	</TitleBar>
+
+	<Position Width="500" Height="360" InitialPos="Maximised">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>303</MinWidth>
+			<MinHeight>150</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="ButtonControl" Id="BtnBack">
+			<Position Left="-2" Top="-2" Width="27" Height="27">
+				<Units>AllPixels</Units>
+			</Position>
+			<CustomLook>
+				<FocusRect>
+					<Left>1</Left>
+					<Top>2</Top>
+					<Right>1</Right>
+					<Bottom>0</Bottom>
+				</FocusRect>
+				<Normal>
+					<Element xsi:type="ImageElement" Id="ImgBack">
+						<Position Left="0" Top="-27" Width="27" Height="54">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Normal>
+				<Hot>
+					<Element xsi:type="ImageElement" Id="ImgBack">
+						<Position Left="0" Top="-54" Width="27" Height="81">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Hot>
+				<Pushed>
+					<Element xsi:type="ImageElement" Id="ImgBack">
+						<Position Left="0" Top="-81" Width="27" Height="108">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Pushed>
+				<Disabled>
+					<Element xsi:type="ImageElement" Id="ImgBack">
+						<Position Left="0" Top="0" Width="27" Height="27">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Disabled>
+			</CustomLook>
+			<Help>Back</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnForward">
+			<Position Left="24" Top="-2" Width="27" Height="27">
+				<Units>AllPixels</Units>
+			</Position>
+			<CustomLook>
+				<FocusRect>
+					<Left>1</Left>
+					<Top>2</Top>
+					<Right>1</Right>
+					<Bottom>0</Bottom>
+				</FocusRect>
+				<Normal>
+					<Element xsi:type="ImageElement" Id="ImgForward">
+						<Position Left="-27" Top="-27" Width="54" Height="54">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Normal>
+				<Hot>
+					<Element xsi:type="ImageElement" Id="ImgForward">
+						<Position Left="-27" Top="-54" Width="54" Height="81">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Hot>
+				<Pushed>
+					<Element xsi:type="ImageElement" Id="ImgForward">
+						<Position Left="-27" Top="-81" Width="54" Height="108">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Pushed>
+				<Disabled>
+					<Element xsi:type="ImageElement" Id="ImgForward">
+						<Position Left="-27" Top="0" Width="54" Height="27">
+							<Units>AllPixels</Units>
+						</Position>
+						<Image>
+							<Name>BackForward</Name>
+						</Image>
+					</Element>
+				</Disabled>
+			</CustomLook>
+			<Help>Forward</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnStop">
+			<Position Left="53" Top="0" Width="24" Height="24">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>Stop</Name>
+			</Image>
+			<Help>Stop</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnRefresh">
+			<Position Left="80" Top="0" Width="24" Height="24">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>Refresh</Name>
+			</Image>
+			<Help>Refresh</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnHome">
+			<Position Left="107" Top="0" Width="24" Height="24">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>Home</Name>
+			</Image>
+			<Help>Home</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtAddress">
+			<Position Left="134" Top="0" Width="194" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Help>Enter a web address, file path, or !command...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnGo">
+			<Position Left="331" Top="0" Width="26" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>Go</Name>
+			</Image>
+			<Help>Go</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSearch">
+			<Position Left="360" Top="0" Width="26" Height="24">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>Search</Name>
+			</Image>
+			<Help>Search (Google)</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTitle">
+			<Position Left="-1" Top="26" Width="388" Height="16">
+				<Anchor Horizontal="LeftRightFixed"/>
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Bold>true</Bold>
+			</Font>
+			<Caption>Plus! Browser</Caption>
+		</Control>
+		<Control xsi:type="ProgressControl" Id="PrgLoading">
+			<Position Left="389" Top="16" Width="97" Height="23">
+				<Anchor Horizontal="RightFixed"/>
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="BrowserControl" Id="BrwBrowser">
+			<Position Left="-1" Top="42" Width="487" Height="285">
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatus">
+			<Position Left="-1" Top="329" Width="487">
+				<Anchor Horizontal="LeftRightFixed" Vertical="BottomFixed"/>
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Plus! Browser is initializing...</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

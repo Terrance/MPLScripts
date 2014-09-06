@@ -1,0 +1,1389 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndWriterManageWindows" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Windows: loading...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Windows: loading...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="595" Height="270">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>561</MinWidth>
+			<MinHeight>270</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="LinkControl" Id="LnkHelp">
+			<Position Left="481" Top="-20" Width="98">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<Align>Right</Align>
+			</Attributes>
+			<Caption>&amp;Help guide: disabled</Caption>
+			<Help>Toggle the help guide.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave" Enabled="False">
+			<Position Left="3" Top="-2" Width="62" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>..\Images\icon-save</Name>
+			</Image>
+			<Caption>&amp;Save</Caption>
+			<Help>Save this interface file...</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnTools">
+			<Position Left="70" Top="-2" Width="85">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-settings</Name>
+			</Image>
+			<Menu Id="MnuSettings" VPos="Bottom" HPos="CenterLeft">
+				<MenuEntry Id="MnuSaveAs">Save &amp;As...</MenuEntry>
+				<MenuEntry Id="MnuSaveCopy">&amp;Save Copy...</MenuEntry>
+				<MenuEntry Id="MnuImport">&amp;Import File...</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuSource">Source &amp;Code</MenuEntry>
+				<MenuEntry Id="MnuReload">&amp;Reload File</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuOptions">&amp;Options...</MenuEntry>
+				<MenuEntry Id="MnuAbout">A&amp;bout...</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuExit">&amp;Exit Editor</MenuEntry>
+			</Menu>
+			<Caption>&amp;Tools</Caption>
+			<Help>Perform various tasks on the current interface.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnMulti">
+			<Position Left="194" Top="-2" Width="80" Height="25">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window-multi</Name>
+			</Image>
+			<Caption>&amp;Multiple</Caption>
+			<Help>Perform actions to multiple windows.</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnNew">
+			<Position Left="279" Top="-2" Width="85">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-window-add</Name>
+			</Image>
+			<Menu Id="MnuNew" VPos="Bottom" HPos="CenterRight">
+				<MenuEntry Id="MnuAdd">&amp;Add Window...</MenuEntry>
+				<MenuEntry Id="MnuBuild">&amp;Build Window...</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuPreset">Insert &amp;Preset...</MenuEntry>
+			</Menu>
+			<Caption>&amp;New...</Caption>
+			<Help>Add a new window to the interface...</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnSelection" Enabled="False">
+			<Position Left="369" Top="-2" Width="100">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-window-edit</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Bottom" HPos="CenterRight">
+				<MenuEntry Id="MnuInfo">&amp;Window Info...</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuEdit">&amp;Edit Window...</MenuEntry>
+				<MenuEntry Id="MnuRename">&amp;Rename Window</MenuEntry>
+				<MenuEntry Id="MnuDelete">&amp;Delete Window</MenuEntry>
+				<Separator/>
+				<SubMenu Id="MnuPreview" Label="Preview Window">
+					<MenuEntry Id="MnuPreviewViewer">Interface &amp;Viewer (script)...</MenuEntry>
+					<MenuEntry Id="MnuPreviewTester">Interface &amp;Tester (external)...</MenuEntry>
+				</SubMenu>
+				<Separator/>
+				<MenuEntry Id="MnuCut">&amp;Cut Window</MenuEntry>
+				<MenuEntry Id="MnuCopy">Co&amp;py Window</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuControl">Con&amp;trol Manager...</MenuEntry>
+				<MenuEntry Id="MnuElement">&amp;Element Manager...</MenuEntry>
+			</Menu>
+			<Caption>Se&amp;lection</Caption>
+			<Help>Manipulate the selected window.</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnClipboard" Enabled="False">
+			<Position Left="474" Top="-2" Width="105" Height="25">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-clipboard</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Bottom" HPos="CenterRight">
+				<MenuEntry Id="MnuData">Clipboard &amp;Data...</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuPaste">&amp;Paste Window</MenuEntry>
+				<MenuEntry Id="MnuClear">&amp;Clear Clipboard</MenuEntry>
+			</Menu>
+			<Caption>&amp;Clipboard</Caption>
+			<Help>Manage windows on the clipboard.</Help>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstWindows">
+			<Position Left="3" Top="28" Width="576" Height="177">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<AllowEditText>true</AllowEditText>
+			</Attributes>
+			<ReportView>
+				<HeaderDragDrop>true</HeaderDragDrop>
+				<ShowGridLines>true</ShowGridLines>
+				<SortColHeader>true</SortColHeader>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>ID</ColumnId>
+					<Label>Window ID</Label>
+					<Width>20</Width>
+				</Column>
+				<Column>
+					<ColumnId>Title</ColumnId>
+					<Label>Window Title</Label>
+					<Width>24</Width>
+				</Column>
+				<Column>
+					<ColumnId>Template</ColumnId>
+					<Label>Template</Label>
+					<Width>14</Width>
+				</Column>
+				<Column>
+					<ColumnId>Width</ColumnId>
+					<Label>Width</Label>
+					<Width>9</Width>
+				</Column>
+				<Column>
+					<ColumnId>Height</ColumnId>
+					<Label>Height</Label>
+					<Width>9</Width>
+				</Column>
+				<Column>
+					<ColumnId>Minimize</ColumnId>
+					<Label>Mini.</Label>
+					<Width>8</Width>
+				</Column>
+				<Column>
+					<ColumnId>Maximize</ColumnId>
+					<Label>Maxi.</Label>
+					<Width>8</Width>
+				</Column>
+				<Column>
+					<ColumnId>Close</ColumnId>
+					<Label>Close</Label>
+					<Width>8</Width>
+				</Column>
+			</Columns>
+			<Images>
+				<SmallIcons>
+					<Image Id="Window">
+						<Name>icon-window</Name>
+					</Image>
+					<Image Id="Built">
+						<Name>icon-window-built</Name>
+					</Image>
+				</SmallIcons>
+			</Images>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatusBar">
+			<Position Left="2" Top="208" Width="576">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Caption>Interface Writer is loading window information.  Please wait a moment...</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterPresetWindows" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Insert a preset window...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Insert a preset window...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="324" Height="184">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="ListViewControl" Id="LstWindows">
+			<Position Left="3" Top="-2" Width="305" Height="108">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<SmallIconView>
+				<ItemsAlign>Top</ItemsAlign>
+			</SmallIconView>
+			<Columns>
+				<Column>
+					<ColumnId>ID</ColumnId>
+					<Label>Window ID</Label>
+				</Column>
+			</Columns>
+			<Images>
+				<SmallIcons>
+					<Image Id="Window">
+						<Name>icon-window</Name>
+					</Image>
+				</SmallIcons>
+			</Images>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnAction" Enabled="False">
+			<Position Left="3" Top="111" Width="85">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window-multi</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Top" HPos="CenterLeft">
+				<MenuEntry Id="MnuInsert">&amp;Insert Preset</MenuEntry>
+				<MenuEntry Id="MnuDelete">&amp;Delete Preset</MenuEntry>
+			</Menu>
+			<Caption>&amp;Action</Caption>
+			<Help>Manipulate the selected window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnNew">
+			<Position Left="93" Top="111" Width="75" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window-add</Name>
+			</Image>
+			<Caption>&amp;New...</Caption>
+			<Help>Create a new preset (from the Add Window dialog)...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="238" Top="111" Width="70" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Close</Caption>
+			<Help>Close the preset window manager.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterAddWindow" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Add a window...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Add a window...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="275" Height="260">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtId">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Identification:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtId">
+			<Position Left="80" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter a unique window identifier.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTitle">
+			<Position Left="3" Top="27" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Title:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIcon">
+			<Position Left="80" Top="28" Width="37" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Icon</Caption>
+			<Help>Show the Plus! icon in the title bar.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTitle">
+			<Position Left="121" Top="25" Width="109">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the window's title.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTitle">
+			<Position Left="234" Top="25" Width="24" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-tab</Name>
+			</Image>
+			<Help>Transfer the title to the Extra Code window (create a Caption tag)...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTemplate">
+			<Position Left="3" Top="52" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Template:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbTemplate">
+			<Position Left="80" Top="50" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's template.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtBottomBar">
+			<Position Left="3" Top="77" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Bottom Bar:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbBottomBar">
+			<Position Left="80" Top="75" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's bottom bar.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSize">
+			<Position Left="3" Top="102" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Size:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth">
+			<Position Left="80" Top="100" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the window's width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtXBy">
+			<Position Left="165" Top="102" Width="7">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight">
+			<Position Left="176" Top="100" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the window's height.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtInitialPos">
+			<Position Left="3" Top="127" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Positioning:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbInitialPos">
+			<Position Left="80" Top="125" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's default position.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAdditional">
+			<Position Left="3" Top="150" Width="68" Height="27">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Caption>Additional settings:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkResizeable">
+			<Position Left="80" Top="150" Width="66" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Resizeable</Caption>
+			<Help>Allow this window to be resized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIsAbsolute">
+			<Position Left="156" Top="150" Width="70" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Is Absolute</Caption>
+			<Help>Use pixels as the window's units, rather than dialog units.\nNote: this is also applied to controls and elements within the window.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMinimize">
+			<Position Left="80" Top="165" Width="55" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Minimize</Caption>
+			<Help>Allow this window to be minimized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMaximize">
+			<Position Left="145" Top="165" Width="58" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Maximize</Caption>
+			<Help>Allow this window to be maximized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkClose">
+			<Position Left="215" Top="165" Width="42" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Close</Caption>
+			<Help>Allow this window to be closed.</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnAdd" Enabled="False">
+			<Position Left="3" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-window-add</Name>
+			</Image>
+			<Menu Id="MnuAdd" VPos="Top" HPos="CenterLeft">
+				<MenuEntry Id="MnuAdd">&amp;Add to Interface</MenuEntry>
+				<MenuEntry Id="MnuSave">Save as &amp;Preset</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuBoth">&amp;Save and Add</MenuEntry>
+			</Menu>
+			<Caption>&amp;Add</Caption>
+			<Help>Add this window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode">
+			<Position Left="82" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="183" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the window creation.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterBuildWindowI" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Window builder...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+		</Title>
+	</TitleBar>
+
+	<Position Width="400" Height="300">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>232</MinWidth>
+			<MinHeight>63</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="CheckBoxControl" Id="ChkIcon">
+			<Position Left="2" Top="-23" Width="13" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Show the Plus! icon in the title bar.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTitle">
+			<Position Left="31" Top="-31" Width="183" Height="22">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Help>Enter the window's title.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMinimize">
+			<Position Left="219" Top="-32" Width="54" Height="14">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Caption>Minimize</Caption>
+			<Help>Allow this window to be minimized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMaximize">
+			<Position Left="279" Top="-32" Width="59" Height="14">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Caption>Maximize</Caption>
+			<Help>Allow this window to be maximized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkClose">
+			<Position Left="343" Top="-32" Width="42" Height="14">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed"/>
+			</Position>
+			<Caption>Close</Caption>
+			<Help>Allow this window to be closed.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth">
+			<Position Left="2" Top="232" Width="50">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the window's width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSizeXBy">
+			<Position Left="54" Top="234" Width="7">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight">
+			<Position Left="63" Top="232" Width="50">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the window's height.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSize">
+			<Position Left="117" Top="232" Width="24" Height="21">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-element-edit</Name>
+			</Image>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIsAbsolute">
+			<Position Left="314" Top="222" Width="69" Height="14">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Caption>Is Absolute</Caption>
+			<Help>Use pixels as the window's units, rather than dialog units.\nNote: this is also applied to controls and elements within the window.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkResizeable">
+			<Position Left="314" Top="239" Width="67" Height="14">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Caption>Resizeable</Caption>
+			<Help>Allow this window to be resized.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterBuildWindowM" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Build a window...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Build a window...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="257" Height="174">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtId">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Identification:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtId">
+			<Position Left="80" Top="0" Width="160">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter a unique window identifier.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTemplate">
+			<Position Left="3" Top="27" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Template:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbTemplate">
+			<Position Left="80" Top="25" Width="160">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's template.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtBottomBar">
+			<Position Left="3" Top="52" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Bottom Bar:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbBottomBar">
+			<Position Left="80" Top="50" Width="160">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's bottom bar.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtInitialPos">
+			<Position Left="3" Top="77" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Positioning:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbInitialPos">
+			<Position Left="80" Top="75" Width="160">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's default position.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnAdd" Enabled="False">
+			<Position Left="3" Top="102" Width="60">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window-add</Name>
+			</Image>
+			<Caption>&amp;Add</Caption>
+			<Help>Add this window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode">
+			<Position Left="67" Top="102" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="165" Top="102" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the window creation.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterEditWindow" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Edit a window...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Edit a window...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="275" Height="260">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtId">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Identification:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtId">
+			<Position Left="80" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter a unique window identifier.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTitle">
+			<Position Left="3" Top="27" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Title:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIcon">
+			<Position Left="80" Top="28" Width="37" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Icon</Caption>
+			<Help>Show the Plus! icon in the title bar.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTitle">
+			<Position Left="121" Top="25" Width="109">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the window's title.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTitle">
+			<Position Left="234" Top="25" Width="24" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-tab</Name>
+			</Image>
+			<Help>Transfer the title to the Extra Code window (create a Caption tag)...</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtTemplate">
+			<Position Left="3" Top="52" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Template:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbTemplate">
+			<Position Left="80" Top="50" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's template.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtBottomBar">
+			<Position Left="3" Top="77" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Bottom Bar:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbBottomBar">
+			<Position Left="80" Top="75" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's bottom bar.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtSize">
+			<Position Left="3" Top="102" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Size:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth">
+			<Position Left="80" Top="100" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the window's width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtXBy">
+			<Position Left="165" Top="102" Width="7">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight">
+			<Position Left="176" Top="100" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the window's height.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtInitialPos">
+			<Position Left="3" Top="127" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Font>
+				<Underlined>true</Underlined>
+			</Font>
+			<Caption>Positioning:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbInitialPos">
+			<Position Left="80" Top="125" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the window's default position.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAdditional">
+			<Position Left="3" Top="150" Width="68" Height="27">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Caption>Additional settings:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkResizeable">
+			<Position Left="80" Top="150" Width="66" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Resizeable</Caption>
+			<Help>Allow this window to be resized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIsAbsolute">
+			<Position Left="156" Top="150" Width="70" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Is Absolute</Caption>
+			<Help>Use pixels as the window's units, rather than dialog units.\nNote: this is also applied to controls and elements within the window.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMinimize">
+			<Position Left="80" Top="165" Width="55" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Minimize</Caption>
+			<Help>Allow this window to be minimized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMaximize">
+			<Position Left="145" Top="165" Width="58" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Maximize</Caption>
+			<Help>Allow this window to be maximized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkClose">
+			<Position Left="215" Top="165" Width="42" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Close</Caption>
+			<Help>Allow this window to be closed.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnEdit">
+			<Position Left="3" Top="187" Width="60">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window-edit</Name>
+			</Image>
+			<Caption>&amp;Edit</Caption>
+			<Help>Edit this window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode">
+			<Position Left="67" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="183" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the window creation.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterSelectWindows" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Select and manage multiple windows...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Select and manage multiple windows...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="420" Height="184">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="ListViewControl" Id="LstWindows">
+			<Position Left="3" Top="-2" Width="401" Height="108">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes>
+				<MultipleSel>true</MultipleSel>
+			</Attributes>
+			<SmallIconView>
+				<ItemsAlign>Top</ItemsAlign>
+			</SmallIconView>
+			<Columns>
+				<Column>
+					<ColumnId>ID</ColumnId>
+					<Label>Window ID</Label>
+				</Column>
+			</Columns>
+			<Images>
+				<SmallIcons>
+					<Image Id="Window">
+						<Name>icon-window</Name>
+					</Image>
+				</SmallIcons>
+			</Images>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnAction" Enabled="False">
+			<Position Left="3" Top="111" Width="85">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<Image>
+				<Name>icon-window-multi</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Top" HPos="CenterLeft">
+				<MenuEntry Id="MnuEdit">&amp;Edit Window(s)...</MenuEntry>
+				<MenuEntry Id="MnuDelete">&amp;Delete Window(s)</MenuEntry>
+			</Menu>
+			<Caption>&amp;Action</Caption>
+			<Help>Manipulate the selected window(s).</Help>
+		</Control>
+		<Control xsi:type="MenuButtonControl" Id="BtnSelection">
+			<Position Left="93" Top="111" Width="100">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<AlwaysDisplayBorder>true</AlwaysDisplayBorder>
+			</Attributes>
+			<Image>
+				<Name>icon-element</Name>
+			</Image>
+			<Menu Id="MnuSelection" VPos="Top" HPos="CenterLeft">
+				<MenuEntry Id="MnuAll">Select &amp;All</MenuEntry>
+				<MenuEntry Id="MnuNone">Select &amp;None</MenuEntry>
+				<Separator/>
+				<MenuEntry Id="MnuInvert">&amp;Invert Selection</MenuEntry>
+			</Menu>
+			<Caption>Se&amp;lection</Caption>
+			<Help>Manipulate the window selection.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSort">
+			<Position Left="198" Top="111" Width="65" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-return</Name>
+			</Image>
+			<Caption>&amp;Sort</Caption>
+			<Help>Sort windows in the interface alphabetically.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="334" Top="111" Width="70" Height="25">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Close</Caption>
+			<Help>Close the multiple window manager.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndWriterEditMultiWindows" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Edit some windows...</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Edit some windows...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="279" Height="260">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtWnds">
+			<Position Left="3" Top="2" Width="68">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Windows:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWnds" Visible="False">
+			<Position Left="84" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbWnds">
+			<Position Left="84" Top="0" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>These are the windows that will be edited.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkTitle">
+			<Position Left="3" Top="28" Width="72" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Title:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIcon" Enabled="False">
+			<Position Left="84" Top="28" Width="37" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Icon</Caption>
+			<Help>Show the Plus! icon in the title bar.</Help>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtTitle" Enabled="False">
+			<Position Left="125" Top="25" Width="109">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter the windows' title.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnTitle" Enabled="False">
+			<Position Left="238" Top="25" Width="24" Height="21">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-tab</Name>
+			</Image>
+			<Help>Transfer the title to the Extra Code window (create a Caption tag)...</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkTemplate">
+			<Position Left="3" Top="53" Width="72" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Template:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbTemplate" Enabled="False">
+			<Position Left="84" Top="50" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the windows' template.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkBottomBar">
+			<Position Left="3" Top="78" Width="72" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Bottom Bar:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbBottomBar" Enabled="False">
+			<Position Left="84" Top="75" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the windows' bottom bar.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkSize">
+			<Position Left="3" Top="103" Width="72" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Size:</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtWidth" Enabled="False">
+			<Position Left="84" Top="100" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the windows' width.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtXBy" Enabled="False">
+			<Position Left="169" Top="102" Width="7">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>x</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtHeight" Enabled="False">
+			<Position Left="180" Top="100" Width="82">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<NumbersOnly>true</NumbersOnly>
+			</Attributes>
+			<Help>Enter the windows' height.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkInitialPos">
+			<Position Left="3" Top="128" Width="72" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Positioning:</Caption>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbInitialPos" Enabled="False">
+			<Position Left="84" Top="125" Width="178">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Select the windows' default position.</Help>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtAdditional">
+			<Position Left="3" Top="150" Width="72" Height="27">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Caption>Additional settings:</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkResizeable">
+			<Position Left="84" Top="150" Width="66" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Resizeable</Caption>
+			<Help>Allow these windows to be resized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkIsAbsolute">
+			<Position Left="160" Top="150" Width="70" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Is Absolute</Caption>
+			<Help>Use pixels as these windows' units, rather than dialog units.\nNote: this is also applied to controls and elements within the windows.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMinimize">
+			<Position Left="84" Top="165" Width="55" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Minimize</Caption>
+			<Help>Allow these windows to be minimized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMaximize">
+			<Position Left="149" Top="165" Width="58" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Maximize</Caption>
+			<Help>Allow these windows to be maximized.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkClose">
+			<Position Left="219" Top="165" Width="42" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<Has3States>true</Has3States>
+			</Attributes>
+			<Caption>Close</Caption>
+			<Help>Allow these windows to be closed.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnEdit">
+			<Position Left="3" Top="187" Width="62">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window-edit</Name>
+			</Image>
+			<Caption>&amp;Edit</Caption>
+			<Help>Edit these windows.</Help>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkCode">
+			<Position Left="72" Top="192" Width="13" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Apply new additional code to the selected windows.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCode" Enabled="False">
+			<Position Left="89" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-code</Name>
+			</Image>
+			<Caption>Co&amp;de...</Caption>
+			<Help>Enter some additional code...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="187" Top="187" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the window edit.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

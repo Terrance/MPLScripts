@@ -1,0 +1,150 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<Window Id="WndSubclass" Version="1">
+
+	<Attributes>
+		<ShowInTaskbar>false</ShowInTaskbar>
+	</Attributes>
+
+	<DialogTmpl/>
+
+	<Position Width="0" Height="0"/>
+
+</Window>
+
+<Window Id="WndHotkeys" Version="1">
+
+	<Attributes>
+		<Caption>QuickKey</Caption>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>QuickKey</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="169" Height="215">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtChats">
+			<Position Left="2" Top="0" Width="127">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Messenger Conversations</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtChats">
+			<Position Left="135" Top="-3" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtInfo">
+			<Position Left="2" Top="20" Width="127">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Messenger Information</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtInfo">
+			<Position Left="135" Top="17" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtLstCnts">
+			<Position Left="2" Top="40" Width="127">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Messenger Contact List</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtLstCnts">
+			<Position Left="135" Top="37" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtManager">
+			<Position Left="2" Top="60" Width="127">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>QuickKey Hotkey Manager</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtManager">
+			<Position Left="135" Top="57" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtOptions">
+			<Position Left="2" Top="80" Width="127">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>QuickKey Options</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtOptions">
+			<Position Left="135" Top="77" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="StaticControl" Id="TxtStatus">
+			<Position Left="2" Top="100" Width="127">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Messenger Status</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtStatus">
+			<Position Left="135" Top="97" Width="17">
+				<Units>AllPixels</Units>
+			</Position>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkAlt">
+			<Position Left="3" Top="122" Width="30" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Alt</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkCtrl">
+			<Position Left="37" Top="122" Width="34" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Ctrl</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkShift">
+			<Position Left="75" Top="122" Width="39" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Shift</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkWin">
+			<Position Left="118" Top="122" Width="35" Height="14">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Win</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="2" Top="142" Width="75">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Image>
+				<Name>icon-floppy</Name>
+			</Image>
+			<Caption>Save</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="82" Top="142" Width="70">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Cancel</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

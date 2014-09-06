@@ -1,0 +1,451 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndUpdates" Version="1">
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>WWC Updater | Script updates (0)...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="490" Height="304">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>490</MinWidth>
+			<MinHeight>304</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtHead">
+			<Position Left="43" Top="-2" Width="430" Height="27">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Transparency>200</Transparency>
+			<Caption>0 script updates are available.  Use the list below to review the available updates.  It is recommended that you download all updates, in order to improve functionality.</Caption>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstScripts">
+			<Position Left="3" Top="32" Width="470" Height="193">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<ReportView>
+				<SortColHeader>true</SortColHeader>
+				<HeaderDragDrop>true</HeaderDragDrop>
+				<HasCheckboxes>true</HasCheckboxes>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>Name</ColumnId>
+					<Label>Script Name</Label>
+					<Width>80</Width>
+				</Column>
+				<Column>
+					<ColumnId>Old</ColumnId>
+					<Label>Old</Label>
+					<Width>10</Width>
+				</Column>
+				<Column>
+					<ColumnId>New</ColumnId>
+					<Label>New</Label>
+					<Width>10</Width>
+				</Column>
+			</Columns>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnInfo" Enabled="False">
+			<Position Left="3" Top="231" Width="115">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-help</Name>
+			</Image>
+			<Caption>Information...</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnDownload">
+			<Position Left="213" Top="231" Width="125">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Image>
+				<Name>icon-down</Name>
+			</Image>
+			<Caption>Download now!</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="343" Top="231" Width="130">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>Ignore updates...</Caption>
+		</Control>
+	</Controls>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgLoading">
+			<Position Left="3" Top="-1">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>icon-update</Name>
+			</Image>
+		</Element>
+	</Elements>
+
+</Window>
+
+<Window Id="WndOthers" Version="1">
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>WWC Updater | Other scripts (0)...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="490" Height="304">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>490</MinWidth>
+			<MinHeight>304</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtHead">
+			<Position Left="43" Top="-2" Width="430" Height="27">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Transparency>200</Transparency>
+			<Caption>0 other scripts are available.  Use the list below to review the available scripts.  We recommend that you try some of these scripts, but they are completely optional.</Caption>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstScripts">
+			<Position Left="3" Top="32" Width="470" Height="193">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<ReportView>
+				<SortColHeader>true</SortColHeader>
+				<HeaderDragDrop>true</HeaderDragDrop>
+				<HasCheckboxes>true</HasCheckboxes>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>Name</ColumnId>
+					<Label>Script Name</Label>
+					<Width>85</Width>
+				</Column>
+				<Column>
+					<ColumnId>Version</ColumnId>
+					<Label>Version</Label>
+					<Width>15</Width>
+				</Column>
+			</Columns>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnInfo" Enabled="False">
+			<Position Left="3" Top="231" Width="115">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-help</Name>
+			</Image>
+			<Caption>Information...</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnDownload">
+			<Position Left="218" Top="231" Width="125">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Image>
+				<Name>icon-down</Name>
+			</Image>
+			<Caption>Download now!</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="348" Top="231" Width="125">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>Ignore others...</Caption>
+		</Control>
+	</Controls>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgLoading">
+			<Position Left="3" Top="-1">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>icon-update</Name>
+			</Image>
+		</Element>
+	</Elements>
+
+</Window>
+
+<Window Id="WndAll" Version="1">
+
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>WWC Updater | All scripts (0)...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="490" Height="304">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>490</MinWidth>
+			<MinHeight>304</MinHeight>
+		</Resizeable>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtHead">
+			<Position Left="43" Top="-2" Width="430" Height="27">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Transparency>200</Transparency>
+			<Caption>0 scripts are available in total.  Use the list below to review the available scripts.  It is recommended that you download any updates, but the other scripts are optional.</Caption>
+		</Control>
+		<Control xsi:type="ListViewControl" Id="LstScripts">
+			<Position Left="3" Top="32" Width="470" Height="193">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<ReportView>
+				<SortColHeader>true</SortColHeader>
+				<HeaderDragDrop>true</HeaderDragDrop>
+				<HasCheckboxes>true</HasCheckboxes>
+			</ReportView>
+			<Columns>
+				<Column>
+					<ColumnId>Name</ColumnId>
+					<Label>Script Name</Label>
+					<Width>80</Width>
+				</Column>
+				<Column>
+					<ColumnId>Old</ColumnId>
+					<Label>Old</Label>
+					<Width>10</Width>
+				</Column>
+				<Column>
+					<ColumnId>New</ColumnId>
+					<Label>New</Label>
+					<Width>10</Width>
+				</Column>
+			</Columns>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnInfo" Enabled="False">
+			<Position Left="3" Top="231" Width="115">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-help</Name>
+			</Image>
+			<Caption>Information...</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnDownload">
+			<Position Left="242" Top="231" Width="125">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Image>
+				<Name>icon-down</Name>
+			</Image>
+			<Caption>Download now!</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="373" Top="231" Width="100">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>Ignore all...</Caption>
+		</Control>
+	</Controls>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgLoading">
+			<Position Left="3" Top="-1">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>icon-update</Name>
+			</Image>
+		</Element>
+	</Elements>
+
+</Window>
+
+<Window Id="WndDownloading" Version="1">
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>WWC Updater | Downloading...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="232" Height="75">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtMain">
+			<Position Left="43" Top="-2" Width="167" Height="27">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed"/>
+			</Position>
+			<Attributes>
+				<Trimming>Word</Trimming>
+			</Attributes>
+			<Transparency>200</Transparency>
+			<Caption>Connecting to the update server.\nPlease wait a moment...</Caption>
+		</Control>
+	</Controls>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgLoading">
+			<Position Left="3" Top="-1">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>icon-update</Name>
+			</Image>
+		</Element>
+	</Elements>
+
+</Window>
+
+<Window Id="WndOptions" Version="1">
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>WWC Updater | Options...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="247" Height="180">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Controls>
+		<Control xsi:type="CheckBoxControl" Id="ChkStartupUpdates">
+			<Position Left="3" Top="-2" Width="230" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Check for script updates at startup</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkStartupOthers">
+			<Position Left="3" Top="16" Width="230" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Check for other scripts at startup</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMinsUpdates">
+			<Position Left="3" Top="34" Width="230" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Check for script updates every 30 minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkMinsOthers">
+			<Position Left="3" Top="52" Width="230" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Check for other scripts every 30 minutes</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkProgressList">
+			<Position Left="3" Top="70" Width="230" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Show list download progress window</Caption>
+		</Control>
+		<Control xsi:type="CheckBoxControl" Id="ChkProgressScripts">
+			<Position Left="3" Top="88" Width="230" Height="15">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Show script download progress window</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnSave">
+			<Position Left="2" Top="108" Width="70">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Blue"/>
+			<Image>
+				<Name>icon-save</Name>
+			</Image>
+			<Caption>Save</Caption>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="151" Top="108" Width="80">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>Cancel</Caption>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>

@@ -1,0 +1,219 @@
+<Interfaces xmlns="urn:msgplus:interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:msgplus:interface PlusInterface.xsd">
+
+<!-- Written using Interface Writer BETA 3.0 by Whiz @ WhizWeb Community -->
+
+<Window Id="WndViewerManager" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | View an interface file...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | View an interface file...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="300" Height="142">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtInfo">
+			<Transparency>125</Transparency>
+			<Position Left="2" Top="-3" Width="283">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Please set the location of the existing interface XML file.</Caption>
+		</Control>
+		<Control xsi:type="EditControl" Id="EdtPath">
+			<Position Left="2" Top="15" Width="251" Height="24">
+				<Units>AllPixels</Units>
+			</Position>
+			<Help>Enter a complete file path, or click Browse to find one.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnBrowse">
+			<Position Left="257" Top="15" Width="28">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>sounds-directory</Name>
+			</Image>
+			<Help>Browse for a folder...</Help>
+		</Control>
+		<Control xsi:type="ComboBoxControl" Id="CmbWindows">
+			<Position Left="2" Top="43" Width="283">
+				<Units>AllPixels</Units>
+			</Position>
+			<Images>
+				<Image Id="Window">
+					<Name>icon-window</Name>
+				</Image>
+				<Image Id="Child">
+					<Name>icon-element</Name>
+				</Image>
+				<Image Id="Cross">
+					<Name>icon-cancel</Name>
+				</Image>
+			</Images>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLoad">
+			<Position Left="2" Top="70" Width="60">
+				<Units>AllPixels</Units>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-load</Name>
+			</Image>
+			<Caption>&amp;Load</Caption>
+			<Help>Load this interface file.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnView" Enabled="false">
+			<Position Left="66" Top="70" Width="65">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-window</Name>
+			</Image>
+			<Caption>&amp;View</Caption>
+			<Help>Preview this window.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="220" Top="70" Width="65">
+				<Units>AllPixels</Units>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Exit</Caption>
+			<Help>Exit Interface Viewer.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+<Window Id="WndViewerLoading" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Loading...</Caption>
+		<TopMost>true</TopMost>
+		<ShowInTaskbar>false</ShowInTaskbar>
+	</Attributes>
+
+	<TitleBar>
+		<AllowMinimize>false</AllowMinimize>
+		<AllowClose>false</AllowClose>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Loading...</Text>
+		</Title>
+	</TitleBar>
+
+	<Position Width="214" Height="103">
+		<IsAbsolute>true</IsAbsolute>
+	</Position>
+
+	<DialogTmpl/>
+
+	<Elements>
+		<Element xsi:type="ImageElement" Id="ImgLoading">
+			<Position Top="-2" Left="2">
+				<Units>AllPixels</Units>
+			</Position>
+			<Image><Name>image-config-small</Name></Image>
+		</Element>
+	</Elements>
+
+	<Controls>
+		<Control xsi:type="StaticControl" Id="TxtLoading">
+			<Position Left="56" Top="-4" Width="140">
+				<Units>AllPixels</Units>
+			</Position>
+			<Caption>Loading interface windows...</Caption>
+		</Control>
+		<Control xsi:type="ProgressControl" Id="PrgLoading">
+			<Position Left="71" Top="17" Width="125" Height="37">
+				<Units>AllPixels</Units>
+			</Position>
+			<Marquee/>
+		</Control>
+	</Controls>
+</Window>
+
+<Window Id="WndViewerErrors" Version="1">
+
+	<Attributes>
+		<Caption>Interface Writer | Errors during interface loading...</Caption>
+	</Attributes>
+	
+	<TitleBar>
+		<AllowMaximize>true</AllowMaximize>
+		<Title>
+			<Prefix>Image</Prefix>
+			<Text>Interface Writer | Errors during interface loading...</Text>
+		</Title>
+	</TitleBar>
+	
+	<Position Width="445" Height="278">
+		<IsAbsolute>true</IsAbsolute>
+		<Resizeable Allowed="BothSides">
+			<MinWidth>445</MinWidth>
+			<MinHeight>278</MinHeight>
+		</Resizeable>
+	</Position>
+	
+	<DialogTmpl/>
+	
+	<Controls>
+		<Control xsi:type="RichEditControl" Id="EdtLog">
+			<Position Left="3" Top="0" Width="424" Height="200">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="LeftRightFixed" Vertical="TopBottomFixed"/>
+			</Position>
+			<Attributes><ReadOnly>true</ReadOnly></Attributes>
+			<Help>This is a list of any errors encountered whilst loading the interface.</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnLoad">
+			<Position Left="3" Top="205" Width="60">
+				<Units>AllPixels</Units>
+				<Anchor Vertical="BottomFixed"/>
+			</Position>
+			<Attributes>
+				<IsDefault>true</IsDefault>
+			</Attributes>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-load</Name>
+			</Image>
+			<Caption>&amp;Load</Caption>
+			<Help>Continue loading the file...</Help>
+		</Control>
+		<Control xsi:type="ButtonControl" Id="BtnCancel">
+			<Position Left="352" Top="205" Width="75">
+				<Units>AllPixels</Units>
+				<Anchor Horizontal="RightFixed" Vertical="BottomFixed"/>
+			</Position>
+			<StandardLook Template="Clear"/>
+			<Image>
+				<Name>icon-cancel</Name>
+			</Image>
+			<Caption>&amp;Cancel</Caption>
+			<Help>Cancel the file load.</Help>
+		</Control>
+	</Controls>
+
+</Window>
+
+</Interfaces>
